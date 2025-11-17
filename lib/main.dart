@@ -1,3 +1,5 @@
+import 'package:flickreview/data/movies_data.dart';
+import 'package:flickreview/screens/detail_screnn.dart';
 import 'package:flickreview/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
         ).copyWith(primary: Colors.deepPurple, surface: Colors.deepPurple[50]),
         useMaterial3: true,
       ),
-      home: HomeScreen(),
+      home: DetailScreen(movie: movieList[0]),
     );
   }
 }

@@ -1,24 +1,25 @@
-
-
 import '../models/movies.dart';
 
-var candiList = [
+var movieList = [
   Movie(
     id: 'avatar-2009',
     title: 'Avatar',
     year: '2009',
-    description:
-        'Avatar adalah film fiksi ilmiah epik karya James Cameron yang berlatar di planet Pandora pada tahun 2154. Mengisahkan Jake Sully, seorang mantan marinir yang direkrut untuk mengoperasikan tubuh avatar dan berbaur dengan suku Na\'vi. Film ini terkenal karena penggunaan teknologi CGI revolusioner, dunia Pandora yang memukau, dan pesan kuat tentang lingkungan serta kolonialisme.',
+    synopsis:
+        'Jake Sully, seorang mantan marinir, menjalankan avatar Na\'vi di Pandora dan menemukan dirinya terjebak antara tugas militernya dan perlindungan planet tersebut.',
     genre: 'Sci-Fi, Adventure, Fantasy',
     director: 'James Cameron',
-    duration: '2h 42m',
+    duration: '2h 42m', 
     type: 'Movie',
-    imageAsset: 'images/avatar.jpg',
+    trailerId: '5PSNL1qE6VY', 
+    posterUrl: 'https://image.tmdb.org/t/p/w1280/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg',
     imageUrls: [
-      'https://media-cdn-tripadvisor.com/media/photo-o/11/cd/4f/71/borobudur-and-the-sky.jpg',
-      'https://media-cdn-tripadvisor.com/media/photo-o/11/cd/5d/36/borobudur-airial-view.jpg',
-      'https://media-cdn-tripadvisor.com/media/photo-o/11/cd/4d/c7/borobudur-and-the-sky.jpg',
-      'https://media-cdn-tripadvisor.com/media/photo-o/11/cd/47/0e/borobudur-sunset-moment.jpg',
+      'https://image.tmdb.org/t/p/original/Yc9q6QuWrMp9nuDm5R8ExNqbEq.jpg',
+      'https://image.tmdb.org/t/p/original/8I37NtDffNV7AZlDa7uDvvqhovU.jpg',
+      'https://image.tmdb.org/t/p/original/jlQJDD0L5ZojjlS0KYnApdO0n19.jpg',
+      'https://image.tmdb.org/t/p/original/njjVFhLdNHhkb30AtNDTKtjwHna.jpg',
+      'https://image.tmdb.org/t/p/original/bhdqWOXsDSNGTokJiTGCSr98XIC.jpg',
+      'https://image.tmdb.org/t/p/original/55XziVCAYLOF0hAkpB01FtUF8fq.jpg',
     ],
     imdbRating: 7.9,
     rottenTomatoes: 82,
@@ -33,20 +34,26 @@ var candiList = [
     language: 'English',
     isFavorite: false,
   ),
-
-
+  
   Movie(
     id: 'inception-2010',
     title: 'Inception',
     year: '2010',
-    description:
-        'Inception adalah film Sci-Fi tentang pencuri yang mampu memasuki mimpi seseorang untuk mencuri informasi penting.',
+    synopsis:
+        'Dom Cobb mencuri rahasia melalui mimpi, namun diberi misi sulit: menanamkan sebuah ide ke dalam pikiran target.',
     genre: 'Sci-Fi, Action, Thriller',
     director: 'Christopher Nolan',
     duration: '2h 28m',
     type: 'Movie',
-    imageAsset: 'images/inception.jpg',
-    imageUrls: ['dummy1','dummy2','dummy3','dummy4'],
+    trailerId: 'YoHD9XEInc0', 
+    posterUrl: 'https://image.tmdb.org/t/p/w1280/ljsZTbVsrQSqZgWeep2B1QiDKuh.jpg',
+    imageUrls: [
+      'https://image.tmdb.org/t/p/original/lvHNQSGdjxyW2n0rYCqb40NuCh4.jpg',
+      'https://image.tmdb.org/t/p/original/56tSqd1kN6nU6sI1lfHO0p6mTS3.jpg',
+      'https://image.tmdb.org/t/p/original/9vXCbwKnvnfarmm10OqlvC3SIoA.jpg',
+      'https://image.tmdb.org/t/p/original/oSqBrxDe98mVUD3Aslxi4iewJdR.jpg',
+      'https://image.tmdb.org/t/p/original/b9po61n5dvEgQ366SAbdh1Hdjz1.jpg'
+    ],
     imdbRating: 8.8,
     rottenTomatoes: 87,
     flickReviewRating: 4.8,
@@ -64,14 +71,21 @@ var candiList = [
     id: 'drive-2011',
     title: 'Drive',
     year: '2011',
-    description:
-        'Drive mengikuti kisah seorang stuntman Hollywood yang bekerja sebagai pengemudi pelarian kriminal.',
+    synopsis:
+        'Seorang stuntman pendiam bekerja sebagai pengemudi pelarian dan terjebak masalah besar ketika mencoba menolong tetangganya.',
     genre: 'Crime, Drama, Thriller',
     director: 'Nicolas Winding Refn',
-    duration: '1h 40m',
+    duration: '1h 40m', 
     type: 'Movie',
-    imageAsset: 'images/drive.jpg',
-    imageUrls: ['dummy1','dummy2','dummy3','dummy4'],
+    trailerId: 'OiTiKOy59o4', 
+    posterUrl: 'https://image.tmdb.org/t/p/w1280/602vevIURmpDfzbnv5Ubi6wIkQm.jpg',
+    imageUrls: [
+      'https://image.tmdb.org/t/p/original/1oaLxMtdn47TWdaty8BwdU4oXhV.jpg',
+      'https://image.tmdb.org/t/p/original/xVuAuVgwlCw2XceWLDAUymV1ZGq.jpg',
+      'https://image.tmdb.org/t/p/original/3jZ7aGtq2x1xTe9KjiCyewZAlRH.jpg',
+      'https://image.tmdb.org/t/p/original/iymDDg4upZWgpbSeiE1JCjsSPBs.jpg',
+      'https://image.tmdb.org/t/p/original/bGmjA22fuODDnvNf9UZReI7PLlM.jpg'
+    ],
     imdbRating: 7.8,
     rottenTomatoes: 93,
     flickReviewRating: 4.3,
@@ -85,14 +99,22 @@ var candiList = [
     id: 'avengers-2012',
     title: 'The Avengers',
     year: '2012',
-    description:
-        'The Avengers menggabungkan para pahlawan Marvel untuk melawan ancaman global.',
+    synopsis:
+        'Para pahlawan Marvel bersatu untuk menghentikan Loki yang ingin menaklukkan Bumi bersama pasukan alien.',
     genre: 'Action, Sci-Fi, Adventure',
     director: 'Joss Whedon',
-    duration: '2h 23m',
+    duration: '2h 23m', 
     type: 'Movie',
-    imageAsset: 'images/avengers.jpg',
-    imageUrls: ['dummy1','dummy2','dummy3','dummy4'],
+    trailerId: '6ZfuNTqbHE8&t=2s', 
+    posterUrl: 'https://image.tmdb.org/t/p/w1280/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg',
+    imageUrls: [
+      'https://image.tmdb.org/t/p/original/kqn3odoKHHMnwbYKOXHQYFdk9PP.jpg',
+      'https://image.tmdb.org/t/p/original/AcPvwyYOopP2jJAC5VYs2Y7xhWQ.jpg',
+      'https://image.tmdb.org/t/p/original/kd2LiGBudibcrEGqAIV3bov0pii.jpg',
+      'https://image.tmdb.org/t/p/original/gHLs7Fy3DzLmLsD4lmfqL55KGcl.jpg',
+      'https://image.tmdb.org/t/p/original/86IbFy98QjRIqg6WanKYb9tXNbJ.jpg',
+      'https://image.tm.db.org/t/p/original/yX8IlnW6qgJO50uSrd565Ni3KTj.jpg'
+    ],
     imdbRating: 8.0,
     rottenTomatoes: 91,
     flickReviewRating: 4.4,
@@ -105,19 +127,26 @@ var candiList = [
     language: 'English',
     isFavorite: false,
   ),
-
+  
   Movie(
     id: 'gravity-2013',
     title: 'Gravity',
     year: '2013',
-    description:
-        'Gravity menceritakan perjalanan dua astronot yang berjuang bertahan hidup setelah kecelakaan di luar angkasa.',
+    synopsis:
+        'Dua astronot berjuang untuk bertahan hidup setelah kecelakaan menghancurkan pesawat luar angkasa mereka.',
     genre: 'Sci-Fi, Thriller',
     director: 'Alfonso Cuarón',
-    duration: '1h 31m',
+    duration: '1h 31m', 
     type: 'Movie',
-    imageAsset: 'images/gravity.jpg',
-    imageUrls: ['dummy1','dummy2','dummy3','dummy4'],
+    trailerId: 'OiTiKOy59o4', 
+    posterUrl: 'https://image.tmdb.org/t/p/w1280/wmUeEacsFZzDndaeOtNNmy26rYJ.jpg',
+    imageUrls: [
+      'https://image.tmdb.org/t/p/original/npFPqZeHlEPOlLEpykP6kuSsi6v.jpg',
+      'https://image.tmdb.org/t/path/original/a2n6bKD7qhCPCAEALgsAhWOAQcc.jpg',
+      'https://image.tm.db.org/t/p/original/ssXgDTycPTuxJKFEnUqogmtDgTP.jpg',
+      'https://image.tm.db.org/t/p/original/131lKbxFcAvNALpWX9uodjqckLU.jpg',
+      'https://image.tm.db.org/t/p/original/htUkRdDdI89m5ZbNH8AJGrul7Qu.jpg'
+    ],
     imdbRating: 7.7,
     rottenTomatoes: 96,
     flickReviewRating: 4.1,
@@ -131,14 +160,21 @@ var candiList = [
     id: 'interstellar-2014',
     title: 'Interstellar',
     year: '2014',
-    description:
-        'Interstellar adalah film fiksi ilmiah yang disutradarai oleh Christopher Nolan.',
+    synopsis:
+        'Seorang mantan pilot NASA melakukan perjalanan melalui wormhole untuk mencari planet baru bagi umat manusia.',
     genre: 'Sci-Fi, Adventure, Drama',
     director: 'Christopher Nolan',
-    duration: '2h 49m',
+    duration: '2h 49m', 
     type: 'Movie',
-    imageAsset: 'images/interstellar.jpg',
-    imageUrls: ['dummy1','dummy2','dummy3','dummy4'],
+    trailerId: 'zSWdZVtXT7E', 
+    posterUrl: 'https://image.tmdb.org/t/p/w1280/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg',
+    imageUrls: [
+      'https://image.tmdb.org/t/p/original/5XNQBqnBwPA9yT0jZ0p3s8bbLh0.jpg',
+      'https://image.tmdb.org/t/p/original/ln2Gre4IYRhpjuGVybbtaF4CLo5.jpg',
+      'https://image.tmdb.org/t/p/original/5C3RriLKkIAQtQMx85JLtu4rVI2.jpg',
+      'https://image.tm.db.org/t/p/original/b08gByARHhXbHnVV4iUXCrFfp8p.jpg',
+      'https://image.tm.db.org/t/p/original/5CS5s9LJUWT52jl0QBI9cUpPCBA.jpg'
+    ],
     imdbRating: 8.7,
     rottenTomatoes: 73,
     flickReviewRating: 4.9,
@@ -157,14 +193,20 @@ var candiList = [
     id: 'better-call-saul-2015',
     title: 'Better Call Saul',
     year: '2015',
-    description:
-        'Better Call Saul adalah seri prekuel Breaking Bad yang mengikuti perjalanan Jimmy McGill menjadi Saul Goodman.',
+    synopsis:
+        'Kisah Jimmy McGill, pengacara kecil yang perlahan berubah menjadi Saul Goodman, tokoh penting di dunia Breaking Bad.',
     genre: 'Crime, Drama',
     director: 'Vince Gilligan & Peter Gould',
-    duration: 'Series',
+    duration: '6 seasons', 
     type: 'Series',
-    imageAsset: 'images/bettercallsaul.jpg',
-    imageUrls: ['dummy1','dummy2','dummy3','dummy4'],
+    trailerId: 'HN4oydykJFc', 
+    posterUrl: 'https://image.tmdb.org/t/p/w1280/fC2HDm5t0kHl7mTm7jxMR31b7by.jpg',
+    imageUrls: [
+      'https://image.tm.db.org/t/p/original/y1AD4sbw6mYNiiSFkW1nVZzz4Zn.jpg',
+      'https://image.tm.db.org/t/p/original/oyGRbr6a8uQeNRuamdI13AijMiW.jpg',
+      'https://image.tm.db.org/t/p/original/viDThki0mlD4NDtCVGtLX6Ru44C.jpg',
+      'https://image.tm.db.org/t/p/original/dc1JPNkmqbIcfqao9LScW7AzwiT.jpg'
+    ],
     imdbRating: 8.9,
     rottenTomatoes: 98,
     flickReviewRating: 4.9,
@@ -182,14 +224,21 @@ var candiList = [
     id: 'la-la-land-2016',
     title: 'La La Land',
     year: '2016',
-    description:
-        'La La Land adalah film musikal romantis tentang seorang aktris dan musisi jazz yang mengejar mimpi mereka di Los Angeles.',
+    synopsis:
+        'Seorang musisi jazz dan aktris muda jatuh cinta sambil mengejar mimpi mereka di Los Angeles.',
     genre: 'Drama, Music, Romance',
     director: 'Damien Chazelle',
-    duration: '2h 8m',
+    duration: '2h 8m', 
     type: 'Movie',
-    imageAsset: 'images/lalaland.jpg',
-    imageUrls: ['dummy1','dummy2','dummy3','dummy4'],
+    trailerId: '0pdqf4P9MB8', 
+    posterUrl: 'https://image.tmdb.org/t_path/w1280/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg',
+    imageUrls: [
+      'https://image.tm.db.org/t/p/original/2wmDyHz4gvF6m51IQZJnJzlLsnz.jpg',
+      'https://image.tm.db.org/t/p/original/nofXR1TN1vgGjdfnwGQwFaAWBaY.jpg',
+      'https://image.tm.db.org/t/p/original/tlCBtqrhbPcuXVXoxmQ0AYfUstt.jpg',
+      'https://image.tm/db.org/t/p/original/sy8wZfYJ1yvXePBhSUXEom21OIW.jpg',
+      'https://image.tm.db.org/t/p/original/frM7tvt49DjYJx5TW7GSDyRogEw.jpg'
+    ],
     imdbRating: 8.0,
     rottenTomatoes: 91,
     flickReviewRating: 4.5,
@@ -203,14 +252,21 @@ var candiList = [
     id: 'blade-runner-2049-2017',
     title: 'Blade Runner 2049',
     year: '2017',
-    description:
-        'Blade Runner 2049 adalah sekuel film klasik Blade Runner tentang dunia futuristik penuh android.',
+    synopsis:
+        'Seorang blade runner baru menemukan rahasia yang berpotensi mengguncang sisa umat manusia.',
     genre: 'Sci-Fi, Thriller',
     director: 'Denis Villeneuve',
-    duration: '2h 44m',
+    duration: '2h 44m', 
     type: 'Movie',
-    imageAsset: 'images/bladerunner2049.jpg',
-    imageUrls: ['dummy1','dummy2','dummy3','dummy4'],
+    trailerId: 'gCcx85zbxz4', 
+    posterUrl: 'https://image.tm.db.org/t/p/w1280/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg',
+    imageUrls: [
+      'https://image.tm.db.org/t/p/original/iqZWmj1Ifz4T5tuCuszWktUG5yX.jpg',
+      'https://image.tm.db.org/t/p/original/uKbX1ha7KWyTecvpPpRCB3iFfj3.jpg',
+      'https://image.tm.db.org/t/p/original/AplZ6nnfHQCfRpT1M9aQLi5QorZ.jpg',
+      'https://image.tm/db.org/t/p/original/h4eHTlkEF6e1oIzhIOhxHhITrz7.jpg',
+      'https://image.tm/db.org/t/p/original/AdYJMNhcXVeqjRenSHP88oaLCaC.jpg'
+    ],
     imdbRating: 8.0,
     rottenTomatoes: 88,
     flickReviewRating: 4.5,
@@ -219,19 +275,28 @@ var candiList = [
     language: 'English',
     isFavorite: false,
   ),
-
+  
   Movie(
     id: 'infinity-war-2018',
     title: 'Avengers: Infinity War',
     year: '2018',
-    description:
-        'Para Avengers berjuang untuk menghentikan Thanos mengumpulkan Infinity Stones.',
+    synopsis:
+        'Para Avengers menghadapi Thanos yang berusaha menghapus separuh populasi alam semesta.',
     genre: 'Action, Sci-Fi',
     director: 'Anthony & Joe Russo',
-    duration: '2h 29m',
+    duration: '2h 29m', 
     type: 'Movie',
-    imageAsset: 'images/infinitywar.jpg',
-    imageUrls: ['dummy1','dummy2','dummy3','dummy4'],
+    trailerId: '6ZfuNTqbHE8', 
+    posterUrl: 'https://image.tm.db.org/t/p/w1280/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg',
+    imageUrls: [
+      'https://image.tm.db.org/t/p/original/sbpTzyKkBedre1CjExJMNawEbHB.jpg',
+      'https://image.tm.db.org/t/p/original/k3xGG77CAiB0Wr2Y1H3ApihKTkk.jpg',
+      'https://image.tm.db.org/t/p/original/itSPvOwrQB41h0rGR8YHwquffuf.jpg',
+      'https://image.tm.db.org/t/p/original/odmM7QtethJokb33LNTjZKxglvY.jpg',
+      'https://image.tm.db.org/t/p/original/mRXHHFDcqZOjv73mYf8cP6IlTuq.jpg',
+      'https://image.tm.db.org/t/p/original/42JXtQCaKbNrQVUOsaZ7zwjZYlA.jpg',
+      'https://image.tm.db.org/t/p/original/nNcQGuQwedBD3U5T9riefLtrV07.jpg'
+    ],
     imdbRating: 8.4,
     rottenTomatoes: 85,
     flickReviewRating: 4.7,
@@ -245,14 +310,21 @@ var candiList = [
     id: 'joker-2019',
     title: 'Joker',
     year: '2019',
-    description:
-        'Joker mengikuti Arthur Fleck yang berubah menjadi ikon kekacauan Gotham.',
+    synopsis:
+        'Arthur Fleck, seorang komedian gagal, mengalami tekanan hidup yang mendorongnya menjadi Joker.',
     genre: 'Crime, Drama, Thriller',
     director: 'Todd Phillips',
     duration: '2h 2m',
     type: 'Movie',
-    imageAsset: 'images/joker.jpg',
-    imageUrls: ['dummy1','dummy2','dummy3','dummy4'],
+    trailerId: 'zAGVQLHvwOY',
+    posterUrl: 'https://image.tm.db.org/t/p/w1280/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg',
+    imageUrls: [
+      'https://image.tm.db.org/t/p/original/rlay2M5QYvi6igbGcFjq8jxeusY.jpg',
+      'https://image.tm.db.org/t/p/original/gZWl93sf8AxavYpVT1Un6EF3oCj.jpg',
+      'https://image.tm.db.org/t/p/original/n6bUvigpRFqSwmPp1m2YADdbRBc.jpg',
+      'https://image.tm.db.org/t/p/original/j03CiUq845wzR22Gjf4Jj2JCTGD.jpg',
+      'https://image.tm.db.org/t/p/original/1JlbnzFqp0KQBquCvSmoeWMe274.jpg'
+    ],
     imdbRating: 8.4,
     rottenTomatoes: 69,
     flickReviewRating: 4.6,
@@ -261,19 +333,26 @@ var candiList = [
     language: 'English',
     isFavorite: false,
   ),
-
+  
   Movie(
     id: 'tenet-2020',
     title: 'Tenet',
     year: '2020',
-    description:
-        'Tenet adalah film sci-fi kompleks tentang agen rahasia yang menggunakan inversi waktu.',
+    synopsis:
+        'Seorang agen tanpa nama menggunakan inversi waktu untuk mencegah bencana global.',
     genre: 'Sci-Fi, Action',
     director: 'Christopher Nolan',
-    duration: '2h 30m',
+    duration: '2h 30m', 
     type: 'Movie',
-    imageAsset: 'images/tenet.jpg',
-    imageUrls: ['dummy1','dummy2','dummy3','dummy4'],
+    trailerId: 'AZGcmvrTX9M', 
+    posterUrl: 'https://image.tm.db.org/t/p/w1280/aCIFMriQh8rvhxpN1IWGgvH0Tlg.jpg',
+    imageUrls: [
+      'https://image.tm.db.org/t/p/original/7BYtnXUfweV6EryNYDpZFeS31Ia.jpg',
+      'https://image.tm.db.org/t/p/original/1g7n02DNWOyrYl8WzXViloEHdSC.jpg',
+      'https://image.tm.db.org/t/p/original/s2i74aEODBPUWO9xY4ZpUAzP6ug.jpg',
+      'https://image.tm.db.org/t/p/original/ojWwXilVkFcuTrjqwMhLgEUvwHg.jpg',
+      'https://image.tm/db.org/t/p/original/nDCGa1h5IEFVxgKIyX3dRTox0xi.jpg'
+    ],
     imdbRating: 7.3,
     rottenTomatoes: 69,
     flickReviewRating: 4.2,
@@ -287,14 +366,21 @@ var candiList = [
     id: 'dune-2021',
     title: 'Dune',
     year: '2021',
-    description:
-        'Dune mengikuti Paul Atreides dalam dunia gurun Arrakis melawan kekuatan besar.',
+    synopsis:
+        'Paul Atreides harus menghadapi konflik besar di planet gurun Arrakis demi masa depan keluarganya.',
     genre: 'Sci-Fi, Adventure',
     director: 'Denis Villeneuve',
-    duration: '2h 35m',
+    duration: '2h 35m', 
     type: 'Movie',
-    imageAsset: 'images/dune.jpg',
-    imageUrls: ['dummy1','dummy2','dummy3','dummy4'],
+    trailerId: 'n9xhJrPXop4', 
+    posterUrl: 'https://image.tm.db.org/t/p/w1280/d5NXSklXo0qyIYkgV94XAgMIckC.jpg',
+    imageUrls: [
+      'https://image.tm.db.org/t/p/original/wYMbnrdRCREjNLwFlG5SLWzBjui.jpg',
+      'https://image.tm.db.org/t/p/original/zRKQW58MBEY078AxkHxEJzUskCl.jpg',
+      'https://image.tm/db.org/t/p/original/h3HsfV8Kn9Sz2QWUYYdP5ya23hx.jpg',
+      'https://image.tm.db.org/t/p/original/qVgZu5BTx6pu4owCvVOm4zjTfOi.jpg',
+      'https://image.tm.db.org/t/p/original/1httqnYN5eMIkuxibCkRzInUvoS.jpg'
+    ],
     imdbRating: 8.0,
     rottenTomatoes: 83,
     flickReviewRating: 4.6,
@@ -308,14 +394,26 @@ var candiList = [
     id: 'avatar2-2022',
     title: 'Avatar: The Way of Water',
     year: '2022',
-    description:
-        'Avatar 2 melanjutkan kisah Jake Sully dan Neytiri yang kini menghadapi ancaman baru di Pandora.',
+    synopsis:
+        'Keluarga Sully menghadapi ancaman manusia baru yang memaksa mereka menjelajahi wilayah air Pandora.',
     genre: 'Sci-Fi, Adventure, Fantasy',
     director: 'James Cameron',
-    duration: '3h 12m',
+    duration: '3h 12m', 
     type: 'Movie',
-    imageAsset: 'images/avatar2.jpg',
-    imageUrls: ['dummy1','dummy2','dummy3','dummy4'],
+    trailerId: 'd9MyW72ELq0', 
+    posterUrl: 'https://image.tm.db.org/t/p/w1280/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg',
+    imageUrls: [
+      'https://image.tm/db.org/t/p/original/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg',
+      'https://image.tm/db.org/t/p/original/am8Zbct7hbZYGzet3Ub1Sa9Xskb.jpg',
+      'https://image.tm/db.org/t/p/original/5Aym0qCOh1D7ctZxf5vuYbTQTAa.jpg',
+      'https://image.tm/db.org/t/p/original/v8Ydx3TyWOImcInNb1idApEM8ty.jpg',
+      'https://image.tm/db.org/t/p/original/4V6JopuwMF65NmaLeV4BJvC63uo.jpg',
+      'https://image.tm.db.org/t/p/original/5EBGdIU4uwgfWHZWsewAFPyOA86.jpg',
+      'https://image.tm/db.org/t/p/original/zaapQ1zjKe2BGhhowh5pM251Gpl.jpg',
+      'https://image.tm/db.org/t/p/original/6zHiQ8UlMMBLopNBgZyWohEeNLt.jpg',
+      'https://image.tm/db.org/t/p/original/5gPQKfFJnl8d1edbkOzKONo4mnr.jpg',
+      'https://image.tm.db.org/t/p/original/kI0perE3zYytyDADJaNhiuDqcB0.jpg'
+    ],
     imdbRating: 7.6,
     rottenTomatoes: 76,
     flickReviewRating: 4.4,
@@ -329,14 +427,21 @@ var candiList = [
     id: 'oppenheimer-2023',
     title: 'Oppenheimer',
     year: '2023',
-    description:
-        'Oppenheimer mengikuti kisah J. Robert Oppenheimer dalam proyek pembuatan bom atom.',
+    synopsis:
+        'J. Robert Oppenheimer memimpin proyek pembuatan bom atom pertama yang mengubah sejarah dunia.',
     genre: 'Biography, Drama, History',
     director: 'Christopher Nolan',
-    duration: '3h 0m',
+    duration: '3h 0m', 
     type: 'Movie',
-    imageAsset: 'images/oppenheimer.jpg',
-    imageUrls: ['dummy1','dummy2','dummy3','dummy4'],
+    trailerId: 'uYPbbksJxIg', 
+    posterUrl: 'https://image.tm.db.org/t/p/w1280/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg',
+    imageUrls: [
+      'https://image.tm.db.org/t/p/original/ycnO0cjsAROSGJKuMODgRtWsHQw.jpg',
+      'https://image.tm/db.org/t/p/original/8ohejkcQkNgkJgLn71Ws6Kd35g0.jpg',
+      'https://image.tm/db.org/t/p/original/kMa1TSDj76zTSleXE7xsuZ4s3i0.jpg',
+      'https://image.tm/db.org/t/p/original/zpkUscxB4Is9HMbrSkCoWHRIGOw.jpg',
+      'https://image.tm/db.org/t/p/original/zUObcYmP3F86mq61oNbtZz4tRjT.jpg'
+    ],
     imdbRating: 8.8,
     rottenTomatoes: 93,
     flickReviewRating: 4.8,
@@ -350,14 +455,21 @@ var candiList = [
     id: 'dune2-2024',
     title: 'Dune: Part Two',
     year: '2024',
-    description:
-        'Dune Part Two melanjutkan kisah Paul Atreides memimpin pemberontakan melawan House Harkonnen.',
+    synopsis:
+        'Paul Atreides melanjutkan perjuangannya melawan House Harkonnen untuk membalas pengkhianatan dan menyelamatkan Arrakis.',
     genre: 'Sci-Fi, Adventure',
     director: 'Denis Villeneuve',
-    duration: '2h 46m',
+    duration: '2h 46m', 
     type: 'Movie',
-    imageAsset: 'images/dune2.jpg',
-    imageUrls: ['dummy1','dummy2','dummy3','dummy4'],
+    trailerId: '_YUzQa_1RCE', 
+    posterUrl: 'https://image.tm.db.org/t/p/w1280/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg',
+    imageUrls: [
+      'https://image.tm.db.org/t/p/original/o869RihWTdTyBcEZBjz0izvEsVf.jpg',
+      'https://image.tm.db.org/t/p/original/ylkdrn23p3gQcHx7ukIfuy2CkTE.jpg',
+      'https://image.tm.db.org/t/p/original/uUVQCwBsWdQDMssXv1TRvYKnXgS.jpg',
+      'https://image.tm/db.org/t/p/original/irsdBEZxSgrs7YPDDCW9cB133VW.jpg',
+      'https://image.tm.db.org/t/p/original/7Ka1gozTtbqph71EAmCoZzp0IeV.jpg'
+    ],
     imdbRating: 8.5,
     rottenTomatoes: 92,
     flickReviewRating: 4.7,
@@ -366,19 +478,27 @@ var candiList = [
     language: 'English',
     isFavorite: false,
   ),
-
+  
   Movie(
     id: 'avatar3-2025',
     title: 'Avatar: Fire and Ash',
     year: '2025',
-    description:
-        'Avatar 3 akan melanjutkan kisah keluarga Sully dan memperkenalkan wilayah baru Pandora serta suku Na\'vi lainnya.',
+    synopsis:
+        'Kisah keluarga Sully berlanjut ketika mereka menghadapi suku Na\'vi baru serta ancaman manusia yang semakin berbahaya.',
     genre: 'Sci-Fi, Adventure, Fantasy',
     director: 'James Cameron',
     duration: 'TBA',
     type: 'Movie',
-    imageAsset: 'images/avatar3.jpg',
-    imageUrls: ['dummy1','dummy2','dummy3','dummy4'],
+    trailerId: 'nb_fFj_0rq8', 
+    posterUrl: 'https://image.tm.db.org/t/p/w1280/5bxrxnRaxZooBAxgUVBZ13dpzC7.jpg',
+    imageUrls: [
+      'https://image.tm.db.org/t/path/original/pN3eaCl3sqwrerU8UNdp40F2mK0.jpg',
+      'https://image.tm.db.org/t_path/original/vm4H1DivjQoNIm0Vs6i3CTzFxQ0.jpg',
+      'https://image.tm.db.org/t_path/original/6b8NeOAiC7ExX3t93zIcntSstj4.jpg',
+      'https://image.tm.db.org/t_path/original/wvsZk5fFvjXKitaWQ2KlYeAq4N3.jpg',
+      'https://image.tm.db.org/t_path/original/jMj0HmnVU2pVEpr3gCNwld3z3cL.jpg',
+      'https://image.tm/db.org/t_path/original/tibsMjg99lAICuqREFvRxKVWkqg.jpg'
+    ],
     imdbRating: 0.0,
     rottenTomatoes: 0,
     flickReviewRating: 0,
