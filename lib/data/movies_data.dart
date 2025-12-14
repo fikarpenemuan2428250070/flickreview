@@ -1,3 +1,5 @@
+import 'package:flickreview/models/review.dart';
+
 import '../models/movies.dart';
 
 var movieList = [
@@ -21,6 +23,7 @@ var movieList = [
       'https://image.tmdb.org/t/p/original/bhdqWOXsDSNGTokJiTGCSr98XIC.jpg',
       'https://image.tmdb.org/t/p/original/55XziVCAYLOF0hAkpB01FtUF8fq.jpg',
     ],
+
     imdbRating: 7.9,
     rottenTomatoes: 82,
     flickReviewRating: 4.6,
@@ -30,6 +33,26 @@ var movieList = [
       'Sigourney Weaver',
       'Stephen Lang',
     ],
+    reviews: [
+      Review(
+        reviewerName: "John Doe",
+        profileImage: "https://i.pravatar.cc/150?img=1",
+        rating: 8.0,
+        shortReview: "Film yang sangat memukau secara visual...",
+        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+            "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
+            "Setiap adegan terlihat indah dan penuh detail...",
+      ),
+      Review(
+        reviewerName: "Sarah Kim",
+        profileImage: "https://i.pravatar.cc/150?img=2",
+        rating: 9.0,
+        shortReview: "Cerita futuristik yang penuh emosi...",
+        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+            "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
+      ),
+    ],
+
     releaseDate: '18 December 2009',
     language: 'English',
     isFavorite: false,
@@ -62,6 +85,25 @@ var movieList = [
       'Joseph Gordon-Levitt',
       'Elliot Page',
     ],
+    reviews: [
+      Review(
+        reviewerName: "John Doe",
+        profileImage: "https://i.pravatar.cc/150?img=1",
+        rating: 8.0,
+        shortReview: "Film yang sangat memukau secara visual...",
+        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+            "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
+            "Setiap adegan terlihat indah dan penuh detail...",
+      ),
+      Review(
+        reviewerName: "Sarah Kim",
+        profileImage: "https://i.pravatar.cc/150?img=2",
+        rating: 9.0,
+        shortReview: "Cerita futuristik yang penuh emosi...",
+        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+            "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
+      ),
+    ],
     releaseDate: '16 July 2010',
     language: 'English',
     isFavorite: false,
@@ -90,6 +132,25 @@ var movieList = [
     rottenTomatoes: 93,
     flickReviewRating: 4.3,
     cast: ['Ryan Gosling', 'Carey Mulligan', 'Oscar Isaac'],
+    reviews: [
+      Review(
+        reviewerName: "John Doe",
+        profileImage: "https://i.pravatar.cc/150?img=1",
+        rating: 8.0,
+        shortReview: "Film yang sangat memukau secara visual...",
+        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+            "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
+            "Setiap adegan terlihat indah dan penuh detail...",
+      ),
+      Review(
+        reviewerName: "Sarah Kim",
+        profileImage: "https://i.pravatar.cc/150?img=2",
+        rating: 9.0,
+        shortReview: "Cerita futuristik yang penuh emosi...",
+        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+            "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
+      ),
+    ],
     releaseDate: '16 September 2011',
     language: 'English',
     isFavorite: false,
@@ -123,6 +184,25 @@ var movieList = [
       'Chris Evans',
       'Scarlett Johansson',
     ],
+    reviews: [
+      Review(
+        reviewerName: "John Doe",
+        profileImage: "https://i.pravatar.cc/150?img=1",
+        rating: 8.0,
+        shortReview: "Film yang sangat memukau secara visual...",
+        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+            "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
+            "Setiap adegan terlihat indah dan penuh detail...",
+      ),
+      Review(
+        reviewerName: "Sarah Kim",
+        profileImage: "https://i.pravatar.cc/150?img=2",
+        rating: 9.0,
+        shortReview: "Cerita futuristik yang penuh emosi...",
+        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+            "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
+      ),
+    ],
     releaseDate: '4 May 2012',
     language: 'English',
     isFavorite: false,
@@ -151,6 +231,25 @@ var movieList = [
     rottenTomatoes: 96,
     flickReviewRating: 4.1,
     cast: ['Sandra Bullock', 'George Clooney'],
+    reviews: [
+      Review(
+        reviewerName: "John Doe",
+        profileImage: "https://i.pravatar.cc/150?img=1",
+        rating: 8.0,
+        shortReview: "Film yang sangat memukau secara visual...",
+        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+            "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
+            "Setiap adegan terlihat indah dan penuh detail...",
+      ),
+      Review(
+        reviewerName: "Sarah Kim",
+        profileImage: "https://i.pravatar.cc/150?img=2",
+        rating: 9.0,
+        shortReview: "Cerita futuristik yang penuh emosi...",
+        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+            "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
+      ),
+    ],
     releaseDate: '4 October 2013',
     language: 'English',
     isFavorite: false,
@@ -184,6 +283,25 @@ var movieList = [
       'Jessica Chastain',
       'Michael Caine',
     ],
+    reviews: [
+      Review(
+        reviewerName: "John Doe",
+        profileImage: "https://i.pravatar.cc/150?img=1",
+        rating: 8.0,
+        shortReview: "Film yang sangat memukau secara visual...",
+        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+            "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
+            "Setiap adegan terlihat indah dan penuh detail...",
+      ),
+      Review(
+        reviewerName: "Sarah Kim",
+        profileImage: "https://i.pravatar.cc/150?img=2",
+        rating: 9.0,
+        shortReview: "Cerita futuristik yang penuh emosi...",
+        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+            "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
+      ),
+    ],
     releaseDate: '7 November 2014',
     language: 'English',
     isFavorite: false,
@@ -215,6 +333,25 @@ var movieList = [
       'Rhea Seehorn',
       'Jonathan Banks',
     ],
+    reviews: [
+      Review(
+        reviewerName: "John Doe",
+        profileImage: "https://i.pravatar.cc/150?img=1",
+        rating: 8.0,
+        shortReview: "Film yang sangat memukau secara visual...",
+        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+            "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
+            "Setiap adegan terlihat indah dan penuh detail...",
+      ),
+      Review(
+        reviewerName: "Sarah Kim",
+        profileImage: "https://i.pravatar.cc/150?img=2",
+        rating: 9.0,
+        shortReview: "Cerita futuristik yang penuh emosi...",
+        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+            "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
+      ),
+    ],
     releaseDate: '8 February 2015',
     language: 'English',
     isFavorite: false,
@@ -243,6 +380,25 @@ var movieList = [
     rottenTomatoes: 91,
     flickReviewRating: 4.5,
     cast: ['Ryan Gosling', 'Emma Stone'],
+    reviews: [
+      Review(
+        reviewerName: "John Doe",
+        profileImage: "https://i.pravatar.cc/150?img=1",
+        rating: 8.0,
+        shortReview: "Film yang sangat memukau secara visual...",
+        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+            "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
+            "Setiap adegan terlihat indah dan penuh detail...",
+      ),
+      Review(
+        reviewerName: "Sarah Kim",
+        profileImage: "https://i.pravatar.cc/150?img=2",
+        rating: 9.0,
+        shortReview: "Cerita futuristik yang penuh emosi...",
+        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+            "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
+      ),
+    ],
     releaseDate: '9 December 2016',
     language: 'English',
     isFavorite: false,
@@ -271,6 +427,25 @@ var movieList = [
     rottenTomatoes: 88,
     flickReviewRating: 4.5,
     cast: ['Ryan Gosling', 'Harrison Ford', 'Ana de Armas'],
+    reviews: [
+      Review(
+        reviewerName: "John Doe",
+        profileImage: "https://i.pravatar.cc/150?img=1",
+        rating: 8.0,
+        shortReview: "Film yang sangat memukau secara visual...",
+        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+            "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
+            "Setiap adegan terlihat indah dan penuh detail...",
+      ),
+      Review(
+        reviewerName: "Sarah Kim",
+        profileImage: "https://i.pravatar.cc/150?img=2",
+        rating: 9.0,
+        shortReview: "Cerita futuristik yang penuh emosi...",
+        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+            "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
+      ),
+    ],
     releaseDate: '6 October 2017',
     language: 'English',
     isFavorite: false,
@@ -301,6 +476,25 @@ var movieList = [
     rottenTomatoes: 85,
     flickReviewRating: 4.7,
     cast: ['Robert Downey Jr.', 'Chris Hemsworth', 'Chris Evans'],
+    reviews: [
+      Review(
+        reviewerName: "John Doe",
+        profileImage: "https://i.pravatar.cc/150?img=1",
+        rating: 8.0,
+        shortReview: "Film yang sangat memukau secara visual...",
+        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+            "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
+            "Setiap adegan terlihat indah dan penuh detail...",
+      ),
+      Review(
+        reviewerName: "Sarah Kim",
+        profileImage: "https://i.pravatar.cc/150?img=2",
+        rating: 9.0,
+        shortReview: "Cerita futuristik yang penuh emosi...",
+        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+            "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
+      ),
+    ],
     releaseDate: '27 April 2018',
     language: 'English',
     isFavorite: false,
@@ -329,6 +523,25 @@ var movieList = [
     rottenTomatoes: 69,
     flickReviewRating: 4.6,
     cast: ['Joaquin Phoenix', 'Robert De Niro'],
+    reviews: [
+      Review(
+        reviewerName: "John Doe",
+        profileImage: "https://i.pravatar.cc/150?img=1",
+        rating: 8.0,
+        shortReview: "Film yang sangat memukau secara visual...",
+        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+            "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
+            "Setiap adegan terlihat indah dan penuh detail...",
+      ),
+      Review(
+        reviewerName: "Sarah Kim",
+        profileImage: "https://i.pravatar.cc/150?img=2",
+        rating: 9.0,
+        shortReview: "Cerita futuristik yang penuh emosi...",
+        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+            "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
+      ),
+    ],
     releaseDate: '4 October 2019',
     language: 'English',
     isFavorite: false,
@@ -357,6 +570,25 @@ var movieList = [
     rottenTomatoes: 69,
     flickReviewRating: 4.2,
     cast: ['John David Washington', 'Robert Pattinson'],
+    reviews: [
+      Review(
+        reviewerName: "John Doe",
+        profileImage: "https://i.pravatar.cc/150?img=1",
+        rating: 8.0,
+        shortReview: "Film yang sangat memukau secara visual...",
+        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+            "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
+            "Setiap adegan terlihat indah dan penuh detail...",
+      ),
+      Review(
+        reviewerName: "Sarah Kim",
+        profileImage: "https://i.pravatar.cc/150?img=2",
+        rating: 9.0,
+        shortReview: "Cerita futuristik yang penuh emosi...",
+        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+            "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
+      ),
+    ],
     releaseDate: '3 September 2020',
     language: 'English',
     isFavorite: false,
@@ -385,6 +617,25 @@ var movieList = [
     rottenTomatoes: 83,
     flickReviewRating: 4.6,
     cast: ['Timothée Chalamet', 'Zendaya'],
+    reviews: [
+      Review(
+        reviewerName: "John Doe",
+        profileImage: "https://i.pravatar.cc/150?img=1",
+        rating: 8.0,
+        shortReview: "Film yang sangat memukau secara visual...",
+        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+            "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
+            "Setiap adegan terlihat indah dan penuh detail...",
+      ),
+      Review(
+        reviewerName: "Sarah Kim",
+        profileImage: "https://i.pravatar.cc/150?img=2",
+        rating: 9.0,
+        shortReview: "Cerita futuristik yang penuh emosi...",
+        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+            "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
+      ),
+    ],
     releaseDate: '22 October 2021',
     language: 'English',
     isFavorite: false,
@@ -418,6 +669,25 @@ var movieList = [
     rottenTomatoes: 76,
     flickReviewRating: 4.4,
     cast: ['Sam Worthington', 'Zoe Saldana', 'Sigourney Weaver'],
+    reviews: [
+      Review(
+        reviewerName: "John Doe",
+        profileImage: "https://i.pravatar.cc/150?img=1",
+        rating: 8.0,
+        shortReview: "Film yang sangat memukau secara visual...",
+        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+            "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
+            "Setiap adegan terlihat indah dan penuh detail...",
+      ),
+      Review(
+        reviewerName: "Sarah Kim",
+        profileImage: "https://i.pravatar.cc/150?img=2",
+        rating: 9.0,
+        shortReview: "Cerita futuristik yang penuh emosi...",
+        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+            "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
+      ),
+    ],
     releaseDate: '16 December 2022',
     language: 'English',
     isFavorite: false,
@@ -446,6 +716,25 @@ var movieList = [
     rottenTomatoes: 93,
     flickReviewRating: 4.8,
     cast: ['Cillian Murphy', 'Emily Blunt', 'Robert Downey Jr.'],
+    reviews: [
+      Review(
+        reviewerName: "John Doe",
+        profileImage: "https://i.pravatar.cc/150?img=1",
+        rating: 8.0,
+        shortReview: "Film yang sangat memukau secara visual...",
+        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+            "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
+            "Setiap adegan terlihat indah dan penuh detail...",
+      ),
+      Review(
+        reviewerName: "Sarah Kim",
+        profileImage: "https://i.pravatar.cc/150?img=2",
+        rating: 9.0,
+        shortReview: "Cerita futuristik yang penuh emosi...",
+        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+            "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
+      ),
+    ],
     releaseDate: '21 July 2023',
     language: 'English',
     isFavorite: false,
@@ -474,6 +763,25 @@ var movieList = [
     rottenTomatoes: 92,
     flickReviewRating: 4.7,
     cast: ['Timothée Chalamet', 'Zendaya', 'Austin Butler'],
+    reviews: [
+      Review(
+        reviewerName: "John Doe",
+        profileImage: "https://i.pravatar.cc/150?img=1",
+        rating: 8.0,
+        shortReview: "Film yang sangat memukau secara visual...",
+        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+            "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
+            "Setiap adegan terlihat indah dan penuh detail...",
+      ),
+      Review(
+        reviewerName: "Sarah Kim",
+        profileImage: "https://i.pravatar.cc/150?img=2",
+        rating: 9.0,
+        shortReview: "Cerita futuristik yang penuh emosi...",
+        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+            "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
+      ),
+    ],
     releaseDate: '3 March 2024',
     language: 'English',
     isFavorite: false,
@@ -506,6 +814,25 @@ var movieList = [
       'Sam Worthington',
       'Zoe Saldana',
       'Sigourney Weaver',
+    ],
+    reviews: [
+      Review(
+        reviewerName: "John Doe",
+        profileImage: "https://i.pravatar.cc/150?img=1",
+        rating: 8.0,
+        shortReview: "Film yang sangat memukau secara visual...",
+        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+            "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
+            "Setiap adegan terlihat indah dan penuh detail...",
+      ),
+      Review(
+        reviewerName: "Sarah Kim",
+        profileImage: "https://i.pravatar.cc/150?img=2",
+        rating: 9.0,
+        shortReview: "Cerita futuristik yang penuh emosi...",
+        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+            "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
+      ),
     ],
     releaseDate: '19 December 2025',
     language: 'English',

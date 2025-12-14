@@ -1,3 +1,5 @@
+import 'package:flickreview/models/review.dart';
+
 class Movie {
   final String id;
   final String title;
@@ -16,6 +18,7 @@ class Movie {
   final double flickReviewRating;
 
   final List<String> cast;
+  final List<Review> reviews;
   final String releaseDate;
   final String language;
 
@@ -37,6 +40,7 @@ class Movie {
     required this.rottenTomatoes,
     required this.flickReviewRating,
     required this.cast,
+    required this.reviews,
     required this.releaseDate,
     required this.language,
     this.isFavorite = false,
