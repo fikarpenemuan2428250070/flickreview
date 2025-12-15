@@ -1,13 +1,22 @@
-
+import 'package:flickreview/screens/change_password_screen.dart';
+import 'package:flickreview/screens/edit_profile_screen.dart';
 import 'package:flickreview/screens/favorite_screen.dart';
 import 'package:flickreview/screens/home_screen.dart';
 import 'package:flickreview/screens/profile_screen.dart';
+import 'package:flickreview/screens/setting_screen.dart';
 import 'package:flickreview/screens/sign_in_screen.dart';
 import 'package:flickreview/screens/sign_up_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'theme/theme_controller.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => ThemeController(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -18,8 +27,22 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'FlickReview',
+
+      // 🌞 LIGHT MODE
       theme: ThemeData(
+        brightness: Brightness.light,
+        useMaterial3: true,
+
+        scaffoldBackgroundColor: Colors.white,
+
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+          brightness: Brightness.light,
+        ),
+
         appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.white,
+          foregroundColor: Colors.deepPurple,
           iconTheme: IconThemeData(color: Colors.deepPurple),
           titleTextStyle: TextStyle(
             color: Colors.deepPurple,
@@ -27,17 +50,75 @@ class MyApp extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.deepPurple,
-        ).copyWith(primary: Colors.deepPurple, surface: Colors.deepPurple[50]),
-        useMaterial3: true,
+
+        iconTheme: const IconThemeData(color: Colors.deepPurple),
+
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Colors.white,
+          selectedItemColor: Colors.deepPurple,
+          unselectedItemColor: Colors.deepPurple,
+          elevation: 0,
+          showUnselectedLabels: true,
+        ),
       ),
-      home: MainScreen(),
-      initialRoute: '/',
+
+      // 🌙 DARK MODE (yang sudah kamu buat)
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        useMaterial3: true,
+
+        scaffoldBackgroundColor: const Color(0xFF1F1B2E),
+
+        colorScheme: const ColorScheme.dark(
+          primary: Color(0xFF8B5CF6),
+          background: Color(0xFF1F1B2E),
+          surface: Color(0xFF8B5CF6),
+          onPrimary: Colors.white,
+          onSurface: Colors.white,
+        ),
+
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xFF8B5CF6),
+          foregroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.white),
+        ),
+
+        // 🔥 INI YANG WAJIB ADA
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Color(0xFF8B5CF6),
+            foregroundColor: Colors.white, // ⬅️ TEXT SIGN IN PUTIH
+            textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          ),
+        ),
+
+        drawerTheme: const DrawerThemeData(backgroundColor: Color(0xFF1F1B2E)),
+
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Color(0xFF8B5CF6),
+          selectedItemColor: Color(0xFF1F1B2E),
+          unselectedItemColor: Colors.white,
+          showUnselectedLabels: true,
+        ),
+
+        cardTheme: const CardThemeData(color: Color(0xFF8B5CF6)),
+
+        dialogTheme: const DialogThemeData(backgroundColor: Color(0xFF1F1B2E)),
+      ),
+
+      // 🔁 CONNECT KE THEME CONTROLLER
+      themeMode: context.watch<ThemeController>().themeMode,
+
+      // 🏠 HALAMAN UTAMA
+      home: const MainScreen(),
+
+      // 🚦 SEMUA ROUTE WAJIB TERDAFTAR DI SINI
       routes: {
-        '/homescreen': (context) => const HomeScreen(),
-        '/signin': (context) => const SignInScreen(), 
-        '/signup': (context) => const SignUpScreen(), 
+        '/signin': (context) => const SignInScreen(),
+        '/signup': (context) => const SignUpScreen(),
+        '/edit-profile': (context) => const EditProfileScreen(),
+        '/setting': (context) => const SettingScreen(),
+        '/change-password': (context) => const ChangePasswordScreen(),
       },
     );
   }
@@ -51,9 +132,9 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  //TODO: 1. Deklarasi variabel
   int _currentIndex = 0;
-  final List<Widget> _children = [
+
+  final List<Widget> _screens = const [
     HomeScreen(),
     FavoriteScreen(),
     ProfileScreen(),
@@ -62,39 +143,35 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //TODO: 2. Buat properti body berupa widget yang ditampilkan
-      body: _children[_currentIndex],
+      body: _screens[_currentIndex],
 
-      //TODO: 3. Buat properti bottomNavigationBar dengan nilai Theme
       bottomNavigationBar: Theme(
-        //TODO: 4. Buat data dan child dari Theme
-        data: Theme.of(context).copyWith(canvasColor: Colors.deepPurple[50]),
-        child: BottomNavigationBar(
-          currentIndex: _currentIndex,
-          onTap: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home, color: Colors.deepPurple),
-              label: 'Home',
-            ),
-
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite, color: Colors.deepPurple),
-              label: 'favorite',
-            ),
-
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person, color: Colors.deepPurple),
-              label: 'Profile',
-            ),
-          ],
-          selectedItemColor: Colors.deepPurple,
-          unselectedItemColor: Colors.deepPurple[100],
-          showUnselectedLabels: true,
+        data: Theme.of(context).copyWith(canvasColor: Colors.transparent),
+        child: ClipRRect(
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(20),
+            topRight: Radius.circular(20),
+          ),
+          child: BottomNavigationBar(
+            currentIndex: _currentIndex,
+            onTap: (index) {
+              setState(() {
+                _currentIndex = index;
+              });
+            },
+            items: const [
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.favorite),
+                label: 'Favorite',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Profile',
+              ),
+            ],
+            showUnselectedLabels: true,
+          ),
         ),
       ),
     );

@@ -11,10 +11,11 @@ var movieList = [
         'Jake Sully, seorang mantan marinir, menjalankan avatar Na\'vi di Pandora dan menemukan dirinya terjebak antara tugas militernya dan perlindungan planet tersebut.',
     genre: 'Sci-Fi, Adventure, Fantasy',
     director: 'James Cameron',
-    duration: '2h 42m', 
+    duration: '2h 42m',
     type: 'Movie',
-    trailerId: '5PSNL1qE6VY', 
-    posterUrl: 'https://image.tmdb.org/t/p/w1280/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg',
+    trailerId: '5PSNL1qE6VY',
+    posterUrl:
+        'https://image.tmdb.org/t/p/w1280/gKY6q7SjCkAU6FqvqWybDYgUKIF.jpg',
     imageUrls: [
       'https://image.tmdb.org/t/p/original/Yc9q6QuWrMp9nuDm5R8ExNqbEq.jpg',
       'https://image.tmdb.org/t/p/original/8I37NtDffNV7AZlDa7uDvvqhovU.jpg',
@@ -37,18 +38,20 @@ var movieList = [
       Review(
         reviewerName: "John Doe",
         profileImage: "https://i.pravatar.cc/150?img=1",
-        rating: 8.0,
+        rating: 4.0,
         shortReview: "Film yang sangat memukau secara visual...",
-        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+        fullReview:
+            "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
             "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
             "Setiap adegan terlihat indah dan penuh detail...",
       ),
       Review(
         reviewerName: "Sarah Kim",
         profileImage: "https://i.pravatar.cc/150?img=2",
-        rating: 9.0,
+        rating: 4.5,
         shortReview: "Cerita futuristik yang penuh emosi...",
-        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+        fullReview:
+            "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
             "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
       ),
     ],
@@ -57,7 +60,7 @@ var movieList = [
     language: 'English',
     isFavorite: false,
   ),
-  
+
   Movie(
     id: 'inception-2010',
     title: 'Inception',
@@ -68,39 +71,38 @@ var movieList = [
     director: 'Christopher Nolan',
     duration: '2h 28m',
     type: 'Movie',
-    trailerId: 'YoHD9XEInc0', 
-    posterUrl: 'https://image.tmdb.org/t/p/w1280/ljsZTbVsrQSqZgWeep2B1QiDKuh.jpg',
+    trailerId: 'YoHD9XEInc0',
+    posterUrl:
+        'https://image.tmdb.org/t/p/w1280/ljsZTbVsrQSqZgWeep2B1QiDKuh.jpg',
     imageUrls: [
       'https://image.tmdb.org/t/p/original/lvHNQSGdjxyW2n0rYCqb40NuCh4.jpg',
       'https://image.tmdb.org/t/p/original/56tSqd1kN6nU6sI1lfHO0p6mTS3.jpg',
       'https://image.tmdb.org/t/p/original/9vXCbwKnvnfarmm10OqlvC3SIoA.jpg',
       'https://image.tmdb.org/t/p/original/oSqBrxDe98mVUD3Aslxi4iewJdR.jpg',
-      'https://image.tmdb.org/t/p/original/b9po61n5dvEgQ366SAbdh1Hdjz1.jpg'
+      'https://image.tmdb.org/t/p/original/b9po61n5dvEgQ366SAbdh1Hdjz1.jpg',
     ],
     imdbRating: 8.8,
     rottenTomatoes: 87,
     flickReviewRating: 4.8,
-    cast: [
-      'Leonardo DiCaprio',
-      'Joseph Gordon-Levitt',
-      'Elliot Page',
-    ],
+    cast: ['Leonardo DiCaprio', 'Joseph Gordon-Levitt', 'Elliot Page'],
     reviews: [
       Review(
         reviewerName: "John Doe",
         profileImage: "https://i.pravatar.cc/150?img=1",
-        rating: 8.0,
+        rating: 4.0,
         shortReview: "Film yang sangat memukau secara visual...",
-        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+        fullReview:
+            "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
             "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
             "Setiap adegan terlihat indah dan penuh detail...",
       ),
       Review(
         reviewerName: "Sarah Kim",
         profileImage: "https://i.pravatar.cc/150?img=2",
-        rating: 9.0,
+        rating: 4.5,
         shortReview: "Cerita futuristik yang penuh emosi...",
-        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+        fullReview:
+            "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
             "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
       ),
     ],
@@ -117,16 +119,17 @@ var movieList = [
         'Seorang stuntman pendiam bekerja sebagai pengemudi pelarian dan terjebak masalah besar ketika mencoba menolong tetangganya.',
     genre: 'Crime, Drama, Thriller',
     director: 'Nicolas Winding Refn',
-    duration: '1h 40m', 
+    duration: '1h 40m',
     type: 'Movie',
-    trailerId: 'OiTiKOy59o4', 
-    posterUrl: 'https://image.tmdb.org/t/p/w1280/602vevIURmpDfzbnv5Ubi6wIkQm.jpg',
+    trailerId: 'OiTiKOy59o4',
+    posterUrl:
+        'https://image.tmdb.org/t/p/w1280/602vevIURmpDfzbnv5Ubi6wIkQm.jpg',
     imageUrls: [
       'https://image.tmdb.org/t/p/original/1oaLxMtdn47TWdaty8BwdU4oXhV.jpg',
       'https://image.tmdb.org/t/p/original/xVuAuVgwlCw2XceWLDAUymV1ZGq.jpg',
       'https://image.tmdb.org/t/p/original/3jZ7aGtq2x1xTe9KjiCyewZAlRH.jpg',
       'https://image.tmdb.org/t/p/original/iymDDg4upZWgpbSeiE1JCjsSPBs.jpg',
-      'https://image.tmdb.org/t/p/original/bGmjA22fuODDnvNf9UZReI7PLlM.jpg'
+      'https://image.tmdb.org/t/p/original/bGmjA22fuODDnvNf9UZReI7PLlM.jpg',
     ],
     imdbRating: 7.8,
     rottenTomatoes: 93,
@@ -136,18 +139,20 @@ var movieList = [
       Review(
         reviewerName: "John Doe",
         profileImage: "https://i.pravatar.cc/150?img=1",
-        rating: 8.0,
+        rating: 4.0,
         shortReview: "Film yang sangat memukau secara visual...",
-        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+        fullReview:
+            "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
             "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
             "Setiap adegan terlihat indah dan penuh detail...",
       ),
       Review(
         reviewerName: "Sarah Kim",
         profileImage: "https://i.pravatar.cc/150?img=2",
-        rating: 9.0,
+        rating: 4.5,
         shortReview: "Cerita futuristik yang penuh emosi...",
-        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+        fullReview:
+            "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
             "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
       ),
     ],
@@ -164,42 +169,41 @@ var movieList = [
         'Para pahlawan Marvel bersatu untuk menghentikan Loki yang ingin menaklukkan Bumi bersama pasukan alien.',
     genre: 'Action, Sci-Fi, Adventure',
     director: 'Joss Whedon',
-    duration: '2h 23m', 
+    duration: '2h 23m',
     type: 'Movie',
-    trailerId: '6ZfuNTqbHE8&t=2s', 
-    posterUrl: 'https://image.tmdb.org/t/p/w1280/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg',
+    trailerId: '6ZfuNTqbHE8&t=2s',
+    posterUrl:
+        'https://image.tmdb.org/t/p/w1280/RYMX2wcKCBAr24UyPD7xwmjaTn.jpg',
     imageUrls: [
       'https://image.tmdb.org/t/p/original/kqn3odoKHHMnwbYKOXHQYFdk9PP.jpg',
       'https://image.tmdb.org/t/p/original/AcPvwyYOopP2jJAC5VYs2Y7xhWQ.jpg',
       'https://image.tmdb.org/t/p/original/kd2LiGBudibcrEGqAIV3bov0pii.jpg',
       'https://image.tmdb.org/t/p/original/gHLs7Fy3DzLmLsD4lmfqL55KGcl.jpg',
       'https://image.tmdb.org/t/p/original/86IbFy98QjRIqg6WanKYb9tXNbJ.jpg',
-      'https://image.tm.db.org/t/p/original/yX8IlnW6qgJO50uSrd565Ni3KTj.jpg'
+      'https://image.tm.db.org/t/p/original/yX8IlnW6qgJO50uSrd565Ni3KTj.jpg',
     ],
-    imdbRating: 8.0,
+    imdbRating: 4.0,
     rottenTomatoes: 91,
     flickReviewRating: 4.4,
-    cast: [
-      'Robert Downey Jr.',
-      'Chris Evans',
-      'Scarlett Johansson',
-    ],
+    cast: ['Robert Downey Jr.', 'Chris Evans', 'Scarlett Johansson'],
     reviews: [
       Review(
         reviewerName: "John Doe",
         profileImage: "https://i.pravatar.cc/150?img=1",
-        rating: 8.0,
+        rating: 4.0,
         shortReview: "Film yang sangat memukau secara visual...",
-        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+        fullReview:
+            "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
             "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
             "Setiap adegan terlihat indah dan penuh detail...",
       ),
       Review(
         reviewerName: "Sarah Kim",
         profileImage: "https://i.pravatar.cc/150?img=2",
-        rating: 9.0,
+        rating: 4.5,
         shortReview: "Cerita futuristik yang penuh emosi...",
-        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+        fullReview:
+            "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
             "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
       ),
     ],
@@ -207,7 +211,7 @@ var movieList = [
     language: 'English',
     isFavorite: false,
   ),
-  
+
   Movie(
     id: 'gravity-2013',
     title: 'Gravity',
@@ -216,16 +220,17 @@ var movieList = [
         'Dua astronot berjuang untuk bertahan hidup setelah kecelakaan menghancurkan pesawat luar angkasa mereka.',
     genre: 'Sci-Fi, Thriller',
     director: 'Alfonso Cuarón',
-    duration: '1h 31m', 
+    duration: '1h 31m',
     type: 'Movie',
-    trailerId: 'OiTiKOy59o4', 
-    posterUrl: 'https://image.tmdb.org/t/p/w1280/wmUeEacsFZzDndaeOtNNmy26rYJ.jpg',
+    trailerId: 'OiTiKOy59o4',
+    posterUrl:
+        'https://image.tmdb.org/t/p/w1280/wmUeEacsFZzDndaeOtNNmy26rYJ.jpg',
     imageUrls: [
       'https://image.tmdb.org/t/p/original/npFPqZeHlEPOlLEpykP6kuSsi6v.jpg',
       'https://image.tmdb.org/t/path/original/a2n6bKD7qhCPCAEALgsAhWOAQcc.jpg',
       'https://image.tm.db.org/t/p/original/ssXgDTycPTuxJKFEnUqogmtDgTP.jpg',
       'https://image.tm.db.org/t/p/original/131lKbxFcAvNALpWX9uodjqckLU.jpg',
-      'https://image.tm.db.org/t/p/original/htUkRdDdI89m5ZbNH8AJGrul7Qu.jpg'
+      'https://image.tm.db.org/t/p/original/htUkRdDdI89m5ZbNH8AJGrul7Qu.jpg',
     ],
     imdbRating: 7.7,
     rottenTomatoes: 96,
@@ -235,18 +240,20 @@ var movieList = [
       Review(
         reviewerName: "John Doe",
         profileImage: "https://i.pravatar.cc/150?img=1",
-        rating: 8.0,
+        rating: 4.0,
         shortReview: "Film yang sangat memukau secara visual...",
-        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+        fullReview:
+            "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
             "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
             "Setiap adegan terlihat indah dan penuh detail...",
       ),
       Review(
         reviewerName: "Sarah Kim",
         profileImage: "https://i.pravatar.cc/150?img=2",
-        rating: 9.0,
+        rating: 4.5,
         shortReview: "Cerita futuristik yang penuh emosi...",
-        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+        fullReview:
+            "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
             "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
       ),
     ],
@@ -263,16 +270,17 @@ var movieList = [
         'Seorang mantan pilot NASA melakukan perjalanan melalui wormhole untuk mencari planet baru bagi umat manusia.',
     genre: 'Sci-Fi, Adventure, Drama',
     director: 'Christopher Nolan',
-    duration: '2h 49m', 
+    duration: '2h 49m',
     type: 'Movie',
-    trailerId: 'zSWdZVtXT7E', 
-    posterUrl: 'https://image.tmdb.org/t/p/w1280/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg',
+    trailerId: 'zSWdZVtXT7E',
+    posterUrl:
+        'https://image.tmdb.org/t/p/w1280/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg',
     imageUrls: [
       'https://image.tmdb.org/t/p/original/5XNQBqnBwPA9yT0jZ0p3s8bbLh0.jpg',
       'https://image.tmdb.org/t/p/original/ln2Gre4IYRhpjuGVybbtaF4CLo5.jpg',
       'https://image.tmdb.org/t/p/original/5C3RriLKkIAQtQMx85JLtu4rVI2.jpg',
       'https://image.tm.db.org/t/p/original/b08gByARHhXbHnVV4iUXCrFfp8p.jpg',
-      'https://image.tm.db.org/t/p/original/5CS5s9LJUWT52jl0QBI9cUpPCBA.jpg'
+      'https://image.tm.db.org/t/p/original/5CS5s9LJUWT52jl0QBI9cUpPCBA.jpg',
     ],
     imdbRating: 8.7,
     rottenTomatoes: 73,
@@ -287,18 +295,20 @@ var movieList = [
       Review(
         reviewerName: "John Doe",
         profileImage: "https://i.pravatar.cc/150?img=1",
-        rating: 8.0,
+        rating: 4.0,
         shortReview: "Film yang sangat memukau secara visual...",
-        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+        fullReview:
+            "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
             "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
             "Setiap adegan terlihat indah dan penuh detail...",
       ),
       Review(
         reviewerName: "Sarah Kim",
         profileImage: "https://i.pravatar.cc/150?img=2",
-        rating: 9.0,
+        rating: 4.5,
         shortReview: "Cerita futuristik yang penuh emosi...",
-        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+        fullReview:
+            "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
             "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
       ),
     ],
@@ -315,40 +325,39 @@ var movieList = [
         'Kisah Jimmy McGill, pengacara kecil yang perlahan berubah menjadi Saul Goodman, tokoh penting di dunia Breaking Bad.',
     genre: 'Crime, Drama',
     director: 'Vince Gilligan & Peter Gould',
-    duration: '6 seasons', 
+    duration: '6 seasons',
     type: 'Series',
-    trailerId: 'HN4oydykJFc', 
-    posterUrl: 'https://image.tmdb.org/t/p/w1280/fC2HDm5t0kHl7mTm7jxMR31b7by.jpg',
+    trailerId: 'HN4oydykJFc',
+    posterUrl:
+        'https://image.tmdb.org/t/p/w1280/fC2HDm5t0kHl7mTm7jxMR31b7by.jpg',
     imageUrls: [
       'https://image.tm.db.org/t/p/original/y1AD4sbw6mYNiiSFkW1nVZzz4Zn.jpg',
       'https://image.tm.db.org/t/p/original/oyGRbr6a8uQeNRuamdI13AijMiW.jpg',
       'https://image.tm.db.org/t/p/original/viDThki0mlD4NDtCVGtLX6Ru44C.jpg',
-      'https://image.tm.db.org/t/p/original/dc1JPNkmqbIcfqao9LScW7AzwiT.jpg'
+      'https://image.tm.db.org/t/p/original/dc1JPNkmqbIcfqao9LScW7AzwiT.jpg',
     ],
     imdbRating: 8.9,
     rottenTomatoes: 98,
     flickReviewRating: 4.9,
-    cast: [
-      'Bob Odenkirk',
-      'Rhea Seehorn',
-      'Jonathan Banks',
-    ],
+    cast: ['Bob Odenkirk', 'Rhea Seehorn', 'Jonathan Banks'],
     reviews: [
       Review(
         reviewerName: "John Doe",
         profileImage: "https://i.pravatar.cc/150?img=1",
-        rating: 8.0,
+        rating: 4.0,
         shortReview: "Film yang sangat memukau secara visual...",
-        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+        fullReview:
+            "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
             "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
             "Setiap adegan terlihat indah dan penuh detail...",
       ),
       Review(
         reviewerName: "Sarah Kim",
         profileImage: "https://i.pravatar.cc/150?img=2",
-        rating: 9.0,
+        rating: 4.5,
         shortReview: "Cerita futuristik yang penuh emosi...",
-        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+        fullReview:
+            "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
             "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
       ),
     ],
@@ -365,18 +374,19 @@ var movieList = [
         'Seorang musisi jazz dan aktris muda jatuh cinta sambil mengejar mimpi mereka di Los Angeles.',
     genre: 'Drama, Music, Romance',
     director: 'Damien Chazelle',
-    duration: '2h 8m', 
+    duration: '2h 8m',
     type: 'Movie',
-    trailerId: '0pdqf4P9MB8', 
-    posterUrl: 'https://image.tmdb.org/t_path/w1280/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg',
+    trailerId: '0pdqf4P9MB8',
+    posterUrl:
+        'https://image.tmdb.org/t_path/w1280/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg',
     imageUrls: [
       'https://image.tm.db.org/t/p/original/2wmDyHz4gvF6m51IQZJnJzlLsnz.jpg',
       'https://image.tm.db.org/t/p/original/nofXR1TN1vgGjdfnwGQwFaAWBaY.jpg',
       'https://image.tm.db.org/t/p/original/tlCBtqrhbPcuXVXoxmQ0AYfUstt.jpg',
       'https://image.tm/db.org/t/p/original/sy8wZfYJ1yvXePBhSUXEom21OIW.jpg',
-      'https://image.tm.db.org/t/p/original/frM7tvt49DjYJx5TW7GSDyRogEw.jpg'
+      'https://image.tm.db.org/t/p/original/frM7tvt49DjYJx5TW7GSDyRogEw.jpg',
     ],
-    imdbRating: 8.0,
+    imdbRating: 4.0,
     rottenTomatoes: 91,
     flickReviewRating: 4.5,
     cast: ['Ryan Gosling', 'Emma Stone'],
@@ -384,18 +394,20 @@ var movieList = [
       Review(
         reviewerName: "John Doe",
         profileImage: "https://i.pravatar.cc/150?img=1",
-        rating: 8.0,
+        rating: 4.0,
         shortReview: "Film yang sangat memukau secara visual...",
-        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+        fullReview:
+            "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
             "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
             "Setiap adegan terlihat indah dan penuh detail...",
       ),
       Review(
         reviewerName: "Sarah Kim",
         profileImage: "https://i.pravatar.cc/150?img=2",
-        rating: 9.0,
+        rating: 4.5,
         shortReview: "Cerita futuristik yang penuh emosi...",
-        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+        fullReview:
+            "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
             "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
       ),
     ],
@@ -412,18 +424,19 @@ var movieList = [
         'Seorang blade runner baru menemukan rahasia yang berpotensi mengguncang sisa umat manusia.',
     genre: 'Sci-Fi, Thriller',
     director: 'Denis Villeneuve',
-    duration: '2h 44m', 
+    duration: '2h 44m',
     type: 'Movie',
-    trailerId: 'gCcx85zbxz4', 
-    posterUrl: 'https://image.tm.db.org/t/p/w1280/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg',
+    trailerId: 'gCcx85zbxz4',
+    posterUrl:
+        'https://image.tm.db.org/t/p/w1280/gajva2L0rPYkEWjzgFlBXCAVBE5.jpg',
     imageUrls: [
       'https://image.tm.db.org/t/p/original/iqZWmj1Ifz4T5tuCuszWktUG5yX.jpg',
       'https://image.tm.db.org/t/p/original/uKbX1ha7KWyTecvpPpRCB3iFfj3.jpg',
       'https://image.tm.db.org/t/p/original/AplZ6nnfHQCfRpT1M9aQLi5QorZ.jpg',
       'https://image.tm/db.org/t/p/original/h4eHTlkEF6e1oIzhIOhxHhITrz7.jpg',
-      'https://image.tm/db.org/t/p/original/AdYJMNhcXVeqjRenSHP88oaLCaC.jpg'
+      'https://image.tm/db.org/t/p/original/AdYJMNhcXVeqjRenSHP88oaLCaC.jpg',
     ],
-    imdbRating: 8.0,
+    imdbRating: 4.0,
     rottenTomatoes: 88,
     flickReviewRating: 4.5,
     cast: ['Ryan Gosling', 'Harrison Ford', 'Ana de Armas'],
@@ -431,18 +444,20 @@ var movieList = [
       Review(
         reviewerName: "John Doe",
         profileImage: "https://i.pravatar.cc/150?img=1",
-        rating: 8.0,
+        rating: 4.0,
         shortReview: "Film yang sangat memukau secara visual...",
-        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+        fullReview:
+            "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
             "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
             "Setiap adegan terlihat indah dan penuh detail...",
       ),
       Review(
         reviewerName: "Sarah Kim",
         profileImage: "https://i.pravatar.cc/150?img=2",
-        rating: 9.0,
+        rating: 4.5,
         shortReview: "Cerita futuristik yang penuh emosi...",
-        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+        fullReview:
+            "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
             "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
       ),
     ],
@@ -450,7 +465,7 @@ var movieList = [
     language: 'English',
     isFavorite: false,
   ),
-  
+
   Movie(
     id: 'infinity-war-2018',
     title: 'Avengers: Infinity War',
@@ -459,10 +474,11 @@ var movieList = [
         'Para Avengers menghadapi Thanos yang berusaha menghapus separuh populasi alam semesta.',
     genre: 'Action, Sci-Fi',
     director: 'Anthony & Joe Russo',
-    duration: '2h 29m', 
+    duration: '2h 29m',
     type: 'Movie',
-    trailerId: '6ZfuNTqbHE8', 
-    posterUrl: 'https://image.tm.db.org/t/p/w1280/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg',
+    trailerId: '6ZfuNTqbHE8',
+    posterUrl:
+        'https://image.tm.db.org/t/p/w1280/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg',
     imageUrls: [
       'https://image.tm.db.org/t/p/original/sbpTzyKkBedre1CjExJMNawEbHB.jpg',
       'https://image.tm.db.org/t/p/original/k3xGG77CAiB0Wr2Y1H3ApihKTkk.jpg',
@@ -470,7 +486,7 @@ var movieList = [
       'https://image.tm.db.org/t/p/original/odmM7QtethJokb33LNTjZKxglvY.jpg',
       'https://image.tm.db.org/t/p/original/mRXHHFDcqZOjv73mYf8cP6IlTuq.jpg',
       'https://image.tm.db.org/t/p/original/42JXtQCaKbNrQVUOsaZ7zwjZYlA.jpg',
-      'https://image.tm.db.org/t/p/original/nNcQGuQwedBD3U5T9riefLtrV07.jpg'
+      'https://image.tm.db.org/t/p/original/nNcQGuQwedBD3U5T9riefLtrV07.jpg',
     ],
     imdbRating: 8.4,
     rottenTomatoes: 85,
@@ -480,18 +496,20 @@ var movieList = [
       Review(
         reviewerName: "John Doe",
         profileImage: "https://i.pravatar.cc/150?img=1",
-        rating: 8.0,
+        rating: 4.0,
         shortReview: "Film yang sangat memukau secara visual...",
-        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+        fullReview:
+            "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
             "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
             "Setiap adegan terlihat indah dan penuh detail...",
       ),
       Review(
         reviewerName: "Sarah Kim",
         profileImage: "https://i.pravatar.cc/150?img=2",
-        rating: 9.0,
+        rating: 4.5,
         shortReview: "Cerita futuristik yang penuh emosi...",
-        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+        fullReview:
+            "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
             "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
       ),
     ],
@@ -511,13 +529,14 @@ var movieList = [
     duration: '2h 2m',
     type: 'Movie',
     trailerId: 'zAGVQLHvwOY',
-    posterUrl: 'https://image.tm.db.org/t/p/w1280/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg',
+    posterUrl:
+        'https://image.tm.db.org/t/p/w1280/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg',
     imageUrls: [
       'https://image.tm.db.org/t/p/original/rlay2M5QYvi6igbGcFjq8jxeusY.jpg',
       'https://image.tm.db.org/t/p/original/gZWl93sf8AxavYpVT1Un6EF3oCj.jpg',
       'https://image.tm.db.org/t/p/original/n6bUvigpRFqSwmPp1m2YADdbRBc.jpg',
       'https://image.tm.db.org/t/p/original/j03CiUq845wzR22Gjf4Jj2JCTGD.jpg',
-      'https://image.tm.db.org/t/p/original/1JlbnzFqp0KQBquCvSmoeWMe274.jpg'
+      'https://image.tm.db.org/t/p/original/1JlbnzFqp0KQBquCvSmoeWMe274.jpg',
     ],
     imdbRating: 8.4,
     rottenTomatoes: 69,
@@ -527,18 +546,20 @@ var movieList = [
       Review(
         reviewerName: "John Doe",
         profileImage: "https://i.pravatar.cc/150?img=1",
-        rating: 8.0,
+        rating: 4.0,
         shortReview: "Film yang sangat memukau secara visual...",
-        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+        fullReview:
+            "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
             "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
             "Setiap adegan terlihat indah dan penuh detail...",
       ),
       Review(
         reviewerName: "Sarah Kim",
         profileImage: "https://i.pravatar.cc/150?img=2",
-        rating: 9.0,
+        rating: 4.5,
         shortReview: "Cerita futuristik yang penuh emosi...",
-        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+        fullReview:
+            "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
             "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
       ),
     ],
@@ -546,7 +567,7 @@ var movieList = [
     language: 'English',
     isFavorite: false,
   ),
-  
+
   Movie(
     id: 'tenet-2020',
     title: 'Tenet',
@@ -555,16 +576,17 @@ var movieList = [
         'Seorang agen tanpa nama menggunakan inversi waktu untuk mencegah bencana global.',
     genre: 'Sci-Fi, Action',
     director: 'Christopher Nolan',
-    duration: '2h 30m', 
+    duration: '2h 30m',
     type: 'Movie',
-    trailerId: 'AZGcmvrTX9M', 
-    posterUrl: 'https://image.tm.db.org/t/p/w1280/aCIFMriQh8rvhxpN1IWGgvH0Tlg.jpg',
+    trailerId: 'AZGcmvrTX9M',
+    posterUrl:
+        'https://image.tm.db.org/t/p/w1280/aCIFMriQh8rvhxpN1IWGgvH0Tlg.jpg',
     imageUrls: [
       'https://image.tm.db.org/t/p/original/7BYtnXUfweV6EryNYDpZFeS31Ia.jpg',
       'https://image.tm.db.org/t/p/original/1g7n02DNWOyrYl8WzXViloEHdSC.jpg',
       'https://image.tm.db.org/t/p/original/s2i74aEODBPUWO9xY4ZpUAzP6ug.jpg',
       'https://image.tm.db.org/t/p/original/ojWwXilVkFcuTrjqwMhLgEUvwHg.jpg',
-      'https://image.tm/db.org/t/p/original/nDCGa1h5IEFVxgKIyX3dRTox0xi.jpg'
+      'https://image.tm/db.org/t/p/original/nDCGa1h5IEFVxgKIyX3dRTox0xi.jpg',
     ],
     imdbRating: 7.3,
     rottenTomatoes: 69,
@@ -574,18 +596,20 @@ var movieList = [
       Review(
         reviewerName: "John Doe",
         profileImage: "https://i.pravatar.cc/150?img=1",
-        rating: 8.0,
+        rating: 4.0,
         shortReview: "Film yang sangat memukau secara visual...",
-        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+        fullReview:
+            "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
             "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
             "Setiap adegan terlihat indah dan penuh detail...",
       ),
       Review(
         reviewerName: "Sarah Kim",
         profileImage: "https://i.pravatar.cc/150?img=2",
-        rating: 9.0,
+        rating: 4.5,
         shortReview: "Cerita futuristik yang penuh emosi...",
-        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+        fullReview:
+            "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
             "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
       ),
     ],
@@ -602,18 +626,19 @@ var movieList = [
         'Paul Atreides harus menghadapi konflik besar di planet gurun Arrakis demi masa depan keluarganya.',
     genre: 'Sci-Fi, Adventure',
     director: 'Denis Villeneuve',
-    duration: '2h 35m', 
+    duration: '2h 35m',
     type: 'Movie',
-    trailerId: 'n9xhJrPXop4', 
-    posterUrl: 'https://image.tm.db.org/t/p/w1280/d5NXSklXo0qyIYkgV94XAgMIckC.jpg',
+    trailerId: 'n9xhJrPXop4',
+    posterUrl:
+        'https://image.tm.db.org/t/p/w1280/d5NXSklXo0qyIYkgV94XAgMIckC.jpg',
     imageUrls: [
       'https://image.tm.db.org/t/p/original/wYMbnrdRCREjNLwFlG5SLWzBjui.jpg',
       'https://image.tm.db.org/t/p/original/zRKQW58MBEY078AxkHxEJzUskCl.jpg',
       'https://image.tm/db.org/t/p/original/h3HsfV8Kn9Sz2QWUYYdP5ya23hx.jpg',
       'https://image.tm.db.org/t/p/original/qVgZu5BTx6pu4owCvVOm4zjTfOi.jpg',
-      'https://image.tm.db.org/t/p/original/1httqnYN5eMIkuxibCkRzInUvoS.jpg'
+      'https://image.tm.db.org/t/p/original/1httqnYN5eMIkuxibCkRzInUvoS.jpg',
     ],
-    imdbRating: 8.0,
+    imdbRating: 4.0,
     rottenTomatoes: 83,
     flickReviewRating: 4.6,
     cast: ['Timothée Chalamet', 'Zendaya'],
@@ -621,18 +646,20 @@ var movieList = [
       Review(
         reviewerName: "John Doe",
         profileImage: "https://i.pravatar.cc/150?img=1",
-        rating: 8.0,
+        rating: 4.0,
         shortReview: "Film yang sangat memukau secara visual...",
-        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+        fullReview:
+            "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
             "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
             "Setiap adegan terlihat indah dan penuh detail...",
       ),
       Review(
         reviewerName: "Sarah Kim",
         profileImage: "https://i.pravatar.cc/150?img=2",
-        rating: 9.0,
+        rating: 4.5,
         shortReview: "Cerita futuristik yang penuh emosi...",
-        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+        fullReview:
+            "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
             "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
       ),
     ],
@@ -649,10 +676,11 @@ var movieList = [
         'Keluarga Sully menghadapi ancaman manusia baru yang memaksa mereka menjelajahi wilayah air Pandora.',
     genre: 'Sci-Fi, Adventure, Fantasy',
     director: 'James Cameron',
-    duration: '3h 12m', 
+    duration: '3h 12m',
     type: 'Movie',
-    trailerId: 'd9MyW72ELq0', 
-    posterUrl: 'https://image.tm.db.org/t/p/w1280/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg',
+    trailerId: 'd9MyW72ELq0',
+    posterUrl:
+        'https://image.tm.db.org/t/p/w1280/t6HIqrRAclMCA60NsSmeqe9RmNV.jpg',
     imageUrls: [
       'https://image.tm/db.org/t/p/original/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg',
       'https://image.tm/db.org/t/p/original/am8Zbct7hbZYGzet3Ub1Sa9Xskb.jpg',
@@ -663,7 +691,7 @@ var movieList = [
       'https://image.tm/db.org/t/p/original/zaapQ1zjKe2BGhhowh5pM251Gpl.jpg',
       'https://image.tm/db.org/t/p/original/6zHiQ8UlMMBLopNBgZyWohEeNLt.jpg',
       'https://image.tm/db.org/t/p/original/5gPQKfFJnl8d1edbkOzKONo4mnr.jpg',
-      'https://image.tm.db.org/t/p/original/kI0perE3zYytyDADJaNhiuDqcB0.jpg'
+      'https://image.tm.db.org/t/p/original/kI0perE3zYytyDADJaNhiuDqcB0.jpg',
     ],
     imdbRating: 7.6,
     rottenTomatoes: 76,
@@ -673,18 +701,20 @@ var movieList = [
       Review(
         reviewerName: "John Doe",
         profileImage: "https://i.pravatar.cc/150?img=1",
-        rating: 8.0,
+        rating: 4.0,
         shortReview: "Film yang sangat memukau secara visual...",
-        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+        fullReview:
+            "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
             "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
             "Setiap adegan terlihat indah dan penuh detail...",
       ),
       Review(
         reviewerName: "Sarah Kim",
         profileImage: "https://i.pravatar.cc/150?img=2",
-        rating: 9.0,
+        rating: 4.5,
         shortReview: "Cerita futuristik yang penuh emosi...",
-        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+        fullReview:
+            "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
             "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
       ),
     ],
@@ -701,16 +731,17 @@ var movieList = [
         'J. Robert Oppenheimer memimpin proyek pembuatan bom atom pertama yang mengubah sejarah dunia.',
     genre: 'Biography, Drama, History',
     director: 'Christopher Nolan',
-    duration: '3h 0m', 
+    duration: '3h 0m',
     type: 'Movie',
-    trailerId: 'uYPbbksJxIg', 
-    posterUrl: 'https://image.tm.db.org/t/p/w1280/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg',
+    trailerId: 'uYPbbksJxIg',
+    posterUrl:
+        'https://image.tm.db.org/t/p/w1280/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg',
     imageUrls: [
       'https://image.tm.db.org/t/p/original/ycnO0cjsAROSGJKuMODgRtWsHQw.jpg',
       'https://image.tm/db.org/t/p/original/8ohejkcQkNgkJgLn71Ws6Kd35g0.jpg',
       'https://image.tm/db.org/t/p/original/kMa1TSDj76zTSleXE7xsuZ4s3i0.jpg',
       'https://image.tm/db.org/t/p/original/zpkUscxB4Is9HMbrSkCoWHRIGOw.jpg',
-      'https://image.tm/db.org/t/p/original/zUObcYmP3F86mq61oNbtZz4tRjT.jpg'
+      'https://image.tm/db.org/t/p/original/zUObcYmP3F86mq61oNbtZz4tRjT.jpg',
     ],
     imdbRating: 8.8,
     rottenTomatoes: 93,
@@ -720,18 +751,20 @@ var movieList = [
       Review(
         reviewerName: "John Doe",
         profileImage: "https://i.pravatar.cc/150?img=1",
-        rating: 8.0,
+        rating: 4.0,
         shortReview: "Film yang sangat memukau secara visual...",
-        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+        fullReview:
+            "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
             "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
             "Setiap adegan terlihat indah dan penuh detail...",
       ),
       Review(
         reviewerName: "Sarah Kim",
         profileImage: "https://i.pravatar.cc/150?img=2",
-        rating: 9.0,
+        rating: 4.5,
         shortReview: "Cerita futuristik yang penuh emosi...",
-        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+        fullReview:
+            "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
             "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
       ),
     ],
@@ -748,16 +781,17 @@ var movieList = [
         'Paul Atreides melanjutkan perjuangannya melawan House Harkonnen untuk membalas pengkhianatan dan menyelamatkan Arrakis.',
     genre: 'Sci-Fi, Adventure',
     director: 'Denis Villeneuve',
-    duration: '2h 46m', 
+    duration: '2h 46m',
     type: 'Movie',
-    trailerId: '_YUzQa_1RCE', 
-    posterUrl: 'https://image.tm.db.org/t/p/w1280/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg',
+    trailerId: '_YUzQa_1RCE',
+    posterUrl:
+        'https://image.tm.db.org/t/p/w1280/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg',
     imageUrls: [
       'https://image.tm.db.org/t/p/original/o869RihWTdTyBcEZBjz0izvEsVf.jpg',
       'https://image.tm.db.org/t/p/original/ylkdrn23p3gQcHx7ukIfuy2CkTE.jpg',
       'https://image.tm.db.org/t/p/original/uUVQCwBsWdQDMssXv1TRvYKnXgS.jpg',
       'https://image.tm/db.org/t/p/original/irsdBEZxSgrs7YPDDCW9cB133VW.jpg',
-      'https://image.tm.db.org/t/p/original/7Ka1gozTtbqph71EAmCoZzp0IeV.jpg'
+      'https://image.tm.db.org/t/p/original/7Ka1gozTtbqph71EAmCoZzp0IeV.jpg',
     ],
     imdbRating: 8.5,
     rottenTomatoes: 92,
@@ -767,18 +801,20 @@ var movieList = [
       Review(
         reviewerName: "John Doe",
         profileImage: "https://i.pravatar.cc/150?img=1",
-        rating: 8.0,
+        rating: 4.0,
         shortReview: "Film yang sangat memukau secara visual...",
-        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+        fullReview:
+            "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
             "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
             "Setiap adegan terlihat indah dan penuh detail...",
       ),
       Review(
         reviewerName: "Sarah Kim",
         profileImage: "https://i.pravatar.cc/150?img=2",
-        rating: 9.0,
+        rating: 4.5,
         shortReview: "Cerita futuristik yang penuh emosi...",
-        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+        fullReview:
+            "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
             "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
       ),
     ],
@@ -786,7 +822,7 @@ var movieList = [
     language: 'English',
     isFavorite: false,
   ),
-  
+
   Movie(
     id: 'avatar3-2025',
     title: 'Avatar: Fire and Ash',
@@ -797,40 +833,39 @@ var movieList = [
     director: 'James Cameron',
     duration: 'TBA',
     type: 'Movie',
-    trailerId: 'nb_fFj_0rq8', 
-    posterUrl: 'https://image.tm.db.org/t/p/w1280/5bxrxnRaxZooBAxgUVBZ13dpzC7.jpg',
+    trailerId: 'nb_fFj_0rq8',
+    posterUrl:
+        'https://image.tm.db.org/t/p/w1280/5bxrxnRaxZooBAxgUVBZ13dpzC7.jpg',
     imageUrls: [
       'https://image.tm.db.org/t/path/original/pN3eaCl3sqwrerU8UNdp40F2mK0.jpg',
       'https://image.tm.db.org/t_path/original/vm4H1DivjQoNIm0Vs6i3CTzFxQ0.jpg',
       'https://image.tm.db.org/t_path/original/6b8NeOAiC7ExX3t93zIcntSstj4.jpg',
       'https://image.tm.db.org/t_path/original/wvsZk5fFvjXKitaWQ2KlYeAq4N3.jpg',
       'https://image.tm.db.org/t_path/original/jMj0HmnVU2pVEpr3gCNwld3z3cL.jpg',
-      'https://image.tm/db.org/t_path/original/tibsMjg99lAICuqREFvRxKVWkqg.jpg'
+      'https://image.tm/db.org/t_path/original/tibsMjg99lAICuqREFvRxKVWkqg.jpg',
     ],
     imdbRating: 0.0,
     rottenTomatoes: 0,
     flickReviewRating: 0,
-    cast: [
-      'Sam Worthington',
-      'Zoe Saldana',
-      'Sigourney Weaver',
-    ],
+    cast: ['Sam Worthington', 'Zoe Saldana', 'Sigourney Weaver'],
     reviews: [
       Review(
         reviewerName: "John Doe",
         profileImage: "https://i.pravatar.cc/150?img=1",
-        rating: 8.0,
+        rating: 4.0,
         shortReview: "Film yang sangat memukau secara visual...",
-        fullReview: "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
+        fullReview:
+            "Film yang sangat memukau secara visual dan memiliki cerita yang kuat. "
             "James Cameron berhasil membawa penonton ke dunia Pandora dengan imersif. "
             "Setiap adegan terlihat indah dan penuh detail...",
       ),
       Review(
         reviewerName: "Sarah Kim",
         profileImage: "https://i.pravatar.cc/150?img=2",
-        rating: 9.0,
+        rating: 4.5,
         shortReview: "Cerita futuristik yang penuh emosi...",
-        fullReview: "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
+        fullReview:
+            "Cerita futuristik yang penuh emosi, dipadukan dengan teknologi CGI yang "
             "sangat maju. Avatar adalah film revolusioner dalam industri film modern...",
       ),
     ],

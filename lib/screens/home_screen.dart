@@ -3,6 +3,7 @@ import 'package:flickreview/models/movies.dart';
 import 'package:flickreview/widgets/item_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flickreview/screens/search_screen.dart';
+import 'package:flickreview/screens/setting_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -23,9 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: EdgeInsets.zero,
           children: [
             const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
+              decoration: BoxDecoration(color: Colors.deepPurple),
               child: Text(
                 'Menu',
                 style: TextStyle(color: Colors.white, fontSize: 24),
@@ -36,9 +35,11 @@ class _HomeScreenState extends State<HomeScreen> {
               leading: const Icon(Icons.settings),
               title: const Text('Setting'),
               onTap: () {
-                Navigator.pop(context); // Tutup drawer
-                // Arahkan ke halaman setting (jika ada)
-                // Navigator.push(context, MaterialPageRoute(builder: (_) => SettingScreen()));
+                Navigator.pop(context); // tutup drawer dulu
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const SettingScreen()),
+                );
               },
             ),
 

@@ -3,7 +3,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flickreview/models/movies.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:youtube_player_iframe/youtube_player_iframe.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'review_screen.dart';
 
 class DetailScreen extends StatefulWidget {
@@ -15,6 +15,53 @@ class DetailScreen extends StatefulWidget {
 }
 
 class _DetailScreenState extends State<DetailScreen> {
+  Widget _buildTrailer(BuildContext context) {
+    final trailerUrl =
+        "https://www.youtube.com/watch?v=${widget.movie.trailerId}"; // Avengers
+
+    return GestureDetector(
+      onTap: () async {
+        final uri = Uri.parse(trailerUrl);
+
+        try {
+          await launchUrl(uri, mode: LaunchMode.externalApplication);
+        } catch (e) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text("Tidak dapat membuka trailer")),
+          );
+        }
+      },
+
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          CachedNetworkImage(
+            imageUrl: widget.movie.posterUrl, // sementara pakai poster biasa
+            width: double.infinity,
+            height: 220,
+            fit: BoxFit.cover,
+          ),
+
+          Container(
+            width: double.infinity,
+            height: 220,
+            color: Colors.black.withOpacity(0.3),
+          ),
+
+          Container(
+            width: 70,
+            height: 70,
+            decoration: BoxDecoration(
+              color: Colors.black.withOpacity(0.6),
+              shape: BoxShape.circle,
+            ),
+            child: const Icon(Icons.play_arrow, color: Colors.white, size: 40),
+          ),
+        ],
+      ),
+    );
+  }
+
   bool isFavorite = false;
   bool isSignedIn = false;
 
@@ -87,23 +134,13 @@ class _DetailScreenState extends State<DetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final youtubeController = YoutubePlayerController.fromVideoId(
-      videoId: widget.movie.trailerId,
-      autoPlay: false,
-      params: const YoutubePlayerParams(showFullscreenButton: true),
-    );
-
     return Scaffold(
       body: Stack(
         children: [
           Column(
             children: [
               // TRAILER
-              SizedBox(
-                height: 300,
-                width: double.infinity,
-                child: YoutubePlayer(controller: youtubeController),
-              ),
+              _buildTrailer(context),
 
               Expanded(
                 child: SingleChildScrollView(
@@ -169,10 +206,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                   RichText(
                                     text: TextSpan(
                                       text: "Director: ",
-                                      style: const TextStyle(
-                                        color: Colors.black,
-                                        fontSize: 14,
-                                      ),
+                                      style: Theme.of(context).textTheme.bodyMedium,
                                       children: [
                                         TextSpan(
                                           text: widget.movie.director,
@@ -376,9 +410,8 @@ class _DetailScreenState extends State<DetailScreen> {
                         const SizedBox(height: 25),
                         Divider(color: Colors.deepPurple.shade100),
                         const SizedBox(height: 20),
-                      
-                      // ================== RATING ==================
-                      
+
+                        // ================== RATING ==================
                         const SizedBox(height: 20),
                         const Text(
                           "Rating",
@@ -396,7 +429,7 @@ class _DetailScreenState extends State<DetailScreen> {
                               "Rotten Tomatoes: ${widget.movie.rottenTomatoes}%",
                             ),
                             Text(
-                              "FlickReview: ${widget.movie.flickReviewRating}/10",
+                              "FlickReview: ${widget.movie.flickReviewRating}/5",
                             ),
                           ],
                         ),
@@ -405,7 +438,7 @@ class _DetailScreenState extends State<DetailScreen> {
 
                         // REVIEW SECTION
                         const Text(
-                          "Review",
+                          "FlickReview",
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
@@ -436,7 +469,7 @@ class _DetailScreenState extends State<DetailScreen> {
                                   margin: const EdgeInsets.only(right: 12),
                                   padding: const EdgeInsets.all(12),
                                   decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    color: Theme.of(context).cardColor,
                                     borderRadius: BorderRadius.circular(12),
                                     boxShadow: const [
                                       BoxShadow(

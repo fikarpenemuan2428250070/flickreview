@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SignInScreen extends StatefulWidget {
-  final bool fromRegister; // <-- untuk menampilkan snackbar
+  final bool fromRegister;
 
   const SignInScreen({super.key, this.fromRegister = false});
 
@@ -24,7 +24,6 @@ class _SignInScreenState extends State<SignInScreen> {
   void initState() {
     super.initState();
 
-    // Tampilkan snackbar jika dari registrasi
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (widget.fromRegister) {
         ScaffoldMessenger.of(context).showSnackBar(
@@ -39,8 +38,8 @@ class _SignInScreenState extends State<SignInScreen> {
 
   void _signIn() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    final String enteredUsername = _usernameController.text.trim();
-    final String enteredPassword = _passwordController.text.trim();
+    final enteredUsername = _usernameController.text.trim();
+    final enteredPassword = _passwordController.text.trim();
 
     if (enteredUsername.isEmpty || enteredPassword.isEmpty) {
       setState(() => _errorText = 'Nama Pengguna dan Kata Sandi harus diisi');
@@ -50,7 +49,7 @@ class _SignInScreenState extends State<SignInScreen> {
     List<String> userList = prefs.getStringList("users") ?? [];
 
     if (userList.isEmpty) {
-      setState(() => _errorText = 'Pengguna belum terdaftar. Silahkan daftar terlebih dahulu.');
+      setState(() => _errorText = 'Pengguna belum terdaftar.');
       return;
     }
 
@@ -59,11 +58,8 @@ class _SignInScreenState extends State<SignInScreen> {
 
       if (userData['username'] == enteredUsername &&
           userData['password'] == enteredPassword) {
-
         prefs.setString("currentUser", jsonEncode(userData));
         prefs.setBool("_isSignedIn", true);
-
-        // Penting untuk FavoriteScreen
         prefs.setString("_username", enteredUsername);
 
         setState(() {
@@ -81,6 +77,8 @@ class _SignInScreenState extends State<SignInScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
       appBar: AppBar(title: const Text('Sign In')),
       body: Center(
@@ -91,53 +89,78 @@ class _SignInScreenState extends State<SignInScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  /// USERNAME
                   TextFormField(
                     controller: _usernameController,
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
                     decoration: const InputDecoration(
                       labelText: "Nama Pengguna",
                       border: OutlineInputBorder(),
                     ),
                   ),
+
                   const SizedBox(height: 20),
 
+                  /// PASSWORD
                   TextFormField(
                     controller: _passwordController,
+                    obscureText: _obscurePassword,
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
                     decoration: InputDecoration(
                       labelText: "Kata Sandi",
                       border: const OutlineInputBorder(),
                       errorText: _errorText.isNotEmpty ? _errorText : null,
                       suffixIcon: IconButton(
-                        onPressed: () {
-                          setState(() => _obscurePassword = !_obscurePassword);
-                        },
                         icon: Icon(
-                          _obscurePassword ? Icons.visibility_off : Icons.visibility,
+                          _obscurePassword
+                              ? Icons.visibility_off
+                              : Icons.visibility,
                         ),
+                        onPressed: () {
+                          setState(() {
+                            _obscurePassword = !_obscurePassword;
+                          });
+                        },
                       ),
                     ),
-                    obscureText: _obscurePassword,
                   ),
 
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 24),
 
-                  ElevatedButton(
-                    onPressed: _signIn,
-                    child: const Text('Sign In'),
+                  /// BUTTON SIGN IN
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: _signIn,
+                      child: const Text('Sign In'),
+                    ),
                   ),
 
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 16),
 
+                  /// LINK DAFTAR
                   RichText(
                     text: TextSpan(
-                      text: 'Belum punya akun? ',
-                      style: const TextStyle(fontSize: 16, color: Colors.deepPurple),
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: isDark
+                            ? Colors.white
+                            : Colors.deepPurple,
+                      ),
                       children: [
+                        const TextSpan(text: 'Belum punya akun? '),
                         TextSpan(
-                          text: 'Daftar di sini.',
-                          style: const TextStyle(
-                            color: Colors.blue,
+                          text: 'Daftar di sini',
+                          style: TextStyle(
+                            color: isDark
+                                ? Colors.white
+                                : Colors.deepPurple,
+                            fontWeight: FontWeight.bold,
                             decoration: TextDecoration.underline,
-                            fontSize: 16,
                           ),
                           recognizer: TapGestureRecognizer()
                             ..onTap = () {

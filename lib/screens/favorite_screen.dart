@@ -1,6 +1,8 @@
 import 'package:flickreview/data/movies_data.dart';
 import 'package:flickreview/models/movies.dart';
 import 'package:flickreview/screens/detail_screnn.dart';
+import 'package:flickreview/screens/search_screen.dart';
+import 'package:flickreview/screens/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'sign_in_screen.dart';
@@ -50,44 +52,45 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
     }
 
     favoriteNames = prefs.getStringList('favorites_$username') ?? [];
-
     setState(() => loading = false);
   }
 
   @override
   Widget build(BuildContext context) {
     if (loading) {
-      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+      return const Scaffold(
+        body: Center(child: CircularProgressIndicator()),
+      );
     }
 
     final List<Movie> favoriteMovies = movieList
-        .where((m) => favoriteNames.contains(m.title))
+        .where((movie) => favoriteNames.contains(movie.title))
         .toList();
 
     return Scaffold(
-      // -----------------------------------------
-      // 🔥 SIDEBAR (DRAWER)
-      // -----------------------------------------
+      // ================= DRAWER =================
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
             const DrawerHeader(
-              decoration: BoxDecoration(color: Colors.blue),
+              decoration: BoxDecoration(color: Colors.deepPurple),
               child: Text(
                 'Menu',
                 style: TextStyle(color: Colors.white, fontSize: 24),
               ),
             ),
-
             ListTile(
               leading: const Icon(Icons.settings),
               title: const Text('Setting'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.pop(context); // tutup drawer dulu
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (_) => const SettingScreen()),
+                );
               },
             ),
-
             ListTile(
               leading: const Icon(Icons.info_outline),
               title: const Text('About'),
@@ -105,9 +108,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         ),
       ),
 
-      // -----------------------------------------
-      // 🔥 APP BAR
-      // -----------------------------------------
+      // ================= APP BAR =================
       appBar: AppBar(
         leading: Builder(
           builder: (context) {
@@ -122,13 +123,19 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         title: const Text('Film Favorite'),
         centerTitle: true,
         actions: [
-          IconButton(icon: const Icon(Icons.search), onPressed: () {}),
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => SearchScreen()),
+              );
+            },
+          ),
         ],
       ),
 
-      // -----------------------------------------
-      // 🔥 BODY
-      // -----------------------------------------
+      // ================= BODY =================
       body: favoriteMovies.isEmpty
           ? const Center(
               child: Text(
@@ -139,14 +146,14 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
           : ListView.builder(
               itemCount: favoriteMovies.length,
               itemBuilder: (context, index) {
-                final Movie m = favoriteMovies[index];
+                final Movie movie = favoriteMovies[index];
 
                 return GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => DetailScreen(movie: m),
+                        builder: (_) => DetailScreen(movie: movie),
                       ),
                     );
                   },
@@ -159,7 +166,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: Image.network(
-                            m.posterUrl,
+                            movie.posterUrl,
                             width: 90,
                             height: 135,
                             fit: BoxFit.cover,
@@ -180,7 +187,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                m.title,
+                                movie.title,
                                 style: const TextStyle(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
@@ -188,21 +195,15 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                               ),
                               const SizedBox(height: 4),
                               Text(
-                                "${m.type} • ${m.year}",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  color: Colors.grey[600],
-                                ),
+                                "${movie.type} • ${movie.year}",
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                               const SizedBox(height: 4),
                               Text(
-                                m.genre,
+                                movie.genre,
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: Colors.grey[700],
-                                ),
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                             ],
                           ),

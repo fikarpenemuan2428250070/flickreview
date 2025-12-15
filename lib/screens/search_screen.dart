@@ -154,30 +154,21 @@ class _SearchScreenState extends State<SearchScreen> {
                                       const SizedBox(height: 6),
                                       Text(
                                         movie.year,
-                                        style: const TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.black54,
-                                        ),
+                                        style: Theme.of(context).textTheme.bodyMedium,
                                       ),
 
                                       // NEW: type dan genre di bawah year
                                       const SizedBox(height: 6),
                                       Text(
                                         movie.type,
-                                        style: const TextStyle(
-                                          fontSize: 13,
-                                          color: Colors.black87,
-                                        ),
+                                        style: Theme.of(context).textTheme.bodyMedium,
                                       ),
                                       const SizedBox(height: 4),
                                       Text(
                                         movie.genre,
                                         maxLines: 2,
                                         overflow: TextOverflow.ellipsis,
-                                        style: const TextStyle(
-                                          fontSize: 13,
-                                          color: Colors.black54,
-                                        ),
+                                        style: Theme.of(context).textTheme.bodyMedium,
                                       ),
                                     ],
                                   ),

@@ -14,6 +14,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
 
   String _errorText = '';
   bool _obsecurePassword = true;
@@ -23,7 +25,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
     final String name = _nameController.text.trim();
     final String username = _usernameController.text.trim();
     final String password = _passwordController.text.trim();
+    final String confirmPassword = _confirmPasswordController.text.trim();
 
+    // Validasi konfirmasi password
+    if (password != confirmPassword) {
+      setState(() {
+        _errorText = 'Konfirmasi password tidak sama.';
+      });
+      return;
+    }
+
+    // Validasi kompleksitas password
     if (password.length < 8 ||
         !password.contains(RegExp(r'[A-Z]')) ||
         !password.contains(RegExp(r'[a-z]')) ||
@@ -40,6 +52,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
     List<String> userList = prefs.getStringList("users") ?? [];
 
+    // Cek username sudah digunakan
     for (var u in userList) {
       final data = jsonDecode(u);
       if (data['username'] == username) {
@@ -55,9 +68,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
     });
 
     userList.add(newUser);
-    prefs.setStringList("users", userList);
+    await prefs.setStringList("users", userList);
 
-    // Arahkan ke Sign In + kirim indikator dari registrasi
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
@@ -71,7 +83,33 @@ class _SignUpScreenState extends State<SignUpScreen> {
     _nameController.dispose();
     _usernameController.dispose();
     _passwordController.dispose();
+    _confirmPasswordController.dispose();
     super.dispose();
+  }
+
+  Widget _passwordField({
+    required TextEditingController controller,
+    required String label,
+  }) {
+    return TextFormField(
+      controller: controller,
+      obscureText: _obsecurePassword,
+      decoration: InputDecoration(
+        labelText: label,
+        border: const OutlineInputBorder(),
+        errorText: _errorText.isNotEmpty ? _errorText : null,
+        suffixIcon: IconButton(
+          icon: Icon(
+            _obsecurePassword ? Icons.visibility : Icons.visibility_off,
+          ),
+          onPressed: () {
+            setState(() {
+              _obsecurePassword = !_obsecurePassword;
+            });
+          },
+        ),
+      ),
+    );
   }
 
   @override
@@ -104,25 +142,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   const SizedBox(height: 20),
 
-                  TextFormField(
+                  // Password
+                  _passwordField(
                     controller: _passwordController,
-                    obscureText: _obsecurePassword,
-                    decoration: InputDecoration(
-                      labelText: 'Kata Sandi',
-                      border: const OutlineInputBorder(),
-                      errorText: _errorText.isNotEmpty ? _errorText : null,
-                      suffixIcon: IconButton(
-                        icon: Icon(
-                          _obsecurePassword
-                              ? Icons.visibility
-                              : Icons.visibility_off,
-                        ),
-                        onPressed: () {
-                          setState(() =>
-                              _obsecurePassword = !_obsecurePassword);
-                        },
-                      ),
-                    ),
+                    label: 'Kata Sandi',
+                  ),
+                  const SizedBox(height: 20),
+
+                  // Konfirmasi Password
+                  _passwordField(
+                    controller: _confirmPasswordController,
+                    label: 'Konfirmasi Kata Sandi',
                   ),
                   const SizedBox(height: 20),
 

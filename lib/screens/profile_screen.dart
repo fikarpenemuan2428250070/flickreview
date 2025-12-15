@@ -17,6 +17,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   bool isSignedIn = false;
   String fullName = '';
   String userName = '';
+  String bio = '';
   int favoritemovieCount = 0;
   String? profileImagePath; // path gambar (disimpan di SharedPreferences)
 
@@ -50,6 +51,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       setState(() {
         fullName = user["name"] ?? '';
         userName = user["username"] ?? '';
+        bio = user["bio"] ?? '';
       });
     }
 
@@ -77,6 +79,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
     });
   }
 
+  Future<void> _confirmSignOut() async {
+    final bool? result = await showDialog<bool>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => AlertDialog(
+        title: const Text('Konfirmasi'),
+        content: const Text('Apakah kamu yakin ingin keluar dari akun ini?'),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context, false); // batal
+            },
+            child: const Text('Batal'),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+            onPressed: () {
+              Navigator.pop(context, true); // setuju
+            },
+            child: const Text('Keluar'),
+          ),
+        ],
+      ),
+    );
+
+    if (result == true) {
+      await signOut();
+    }
+  }
+
   // SIGN OUT
   Future<void> signOut() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -93,86 +125,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
       favoritemovieCount = 0;
       profileImagePath = null;
     });
-  }
-
-  // EDIT NAMA (menggunakan dialog input)
-  Future<void> _editName() async {
-    if (!isSignedIn) return;
-
-    final TextEditingController _controller = TextEditingController(
-      text: fullName,
-    );
-
-    final result = await showDialog<String>(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Edit Nama Lengkap'),
-        content: TextField(
-          controller: _controller,
-          decoration: const InputDecoration(hintText: 'Masukkan nama lengkap'),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Batal'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              final newName = _controller.text.trim();
-              if (newName.isEmpty) {
-                // jangan terima nama kosong
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(content: Text('Nama tidak boleh kosong')),
-                );
-                return;
-              }
-              Navigator.pop(context, newName);
-            },
-            child: const Text('Simpan'),
-          ),
-        ],
-      ),
-    );
-
-    if (result != null && result.isNotEmpty) {
-      await _saveName(result);
-      setState(() {
-        fullName = result;
-      });
-
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('Nama berhasil diperbarui')));
-    }
-  }
-
-  // Simpan nama ke currentUser dan juga update daftar users
-  Future<void> _saveName(String newName) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-
-    // Update currentUser
-    final currentUserStr = prefs.getString('currentUser');
-    if (currentUserStr != null) {
-      final Map<String, dynamic> user = jsonDecode(currentUserStr);
-      user['name'] = newName;
-      prefs.setString('currentUser', jsonEncode(user));
-    }
-
-    // Update di users list (jika ada)
-    final List<String> users = prefs.getStringList('users') ?? [];
-    for (int i = 0; i < users.length; i++) {
-      try {
-        final Map<String, dynamic> u = jsonDecode(users[i]);
-        if (u['username'] == userName) {
-          u['name'] = newName;
-          users[i] = jsonEncode(u);
-          break;
-        }
-      } catch (_) {
-        // skip malformed
-      }
-    }
-    await prefs.setStringList('users', users);
   }
 
   // PICK PROFILE IMAGE (camera atau gallery)
@@ -282,116 +234,154 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          // Header ungu
-          Container(
-            height: 200,
-            width: double.infinity,
-            color: Colors.deepPurple,
-          ),
+      body: SizedBox.expand(
+        child: Stack(
+          children: [
+            // HEADER UNGU
+            Container(
+              height: 200,
+              width: double.infinity,
+              color: Colors.deepPurple,
+            ),
 
-          // Body utama
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Column(
-              children: [
-                // FOTO PROFILE
-                Align(
-                  alignment: Alignment.topCenter,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 150),
-                    child: Stack(
-                      alignment: Alignment.bottomRight,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: Colors.deepPurple,
-                              width: 2,
+            // BODY UTAMA
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Column(
+                children: [
+                  // FOTO PROFILE
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 150),
+                      child: Stack(
+                        alignment: Alignment.bottomRight,
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: Colors.deepPurple,
+                                width: 2,
+                              ),
+                              shape: BoxShape.circle,
                             ),
-                            shape: BoxShape.circle,
+                            child: _buildAvatar(),
                           ),
-                          child: _buildAvatar(),
-                        ),
-                        if (isSignedIn)
-                          CircleAvatar(
-                            radius: 18,
-                            backgroundColor: Colors.deepPurple,
-                            child: IconButton(
-                              onPressed: _showImageSourceActionSheet,
-                              icon: Icon(
-                                Icons.camera_alt,
-                                color: Colors.white,
-                                size: 18,
+                          if (isSignedIn)
+                            CircleAvatar(
+                              radius: 18,
+                              backgroundColor: Colors.deepPurple,
+                              child: IconButton(
+                                onPressed: _showImageSourceActionSheet,
+                                icon: const Icon(
+                                  Icons.camera_alt,
+                                  color: Colors.white,
+                                  size: 18,
+                                ),
                               ),
                             ),
-                          ),
-                      ],
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  const SizedBox(height: 20),
+                  Divider(color: Colors.deepPurple[100]),
+                  const SizedBox(height: 4),
+
+                  // USERNAME
+                  ProfileInfoItem(
+                    icon: Icons.lock,
+                    label: 'Pengguna',
+                    value: userName,
+                    iconColor: Colors.amber,
+                  ),
+
+                  const SizedBox(height: 4),
+                  Divider(color: Colors.deepPurple[100]),
+                  const SizedBox(height: 4),
+
+                  // NAMA
+                  ProfileInfoItem(
+                    icon: Icons.person,
+                    label: 'Nama',
+                    value: fullName,
+                    iconColor: Colors.blue,
+                  ),
+
+                  const SizedBox(height: 4),
+                  Divider(color: Colors.deepPurple[100]),
+                  const SizedBox(height: 4),
+
+                  // BIO
+                  ProfileInfoItem(
+                    icon: Icons.info_outline,
+                    label: 'Bio',
+                    value: bio.isNotEmpty ? bio : 'Belum ada bio',
+                    iconColor: Colors.green,
+                  ),
+
+                  const SizedBox(height: 4),
+                  Divider(color: Colors.deepPurple[100]),
+                  const SizedBox(height: 4),
+
+                  // FAVORIT
+                  ProfileInfoItem(
+                    icon: Icons.favorite,
+                    label: 'Favorit',
+                    value: favoritemovieCount > 0
+                        ? '$favoritemovieCount Items'
+                        : 'Tidak ada',
+                    iconColor: Colors.red,
+                  ),
+
+                  const SizedBox(height: 20),
+
+                  // SIGN IN / OUT
+                  isSignedIn
+                      ? TextButton(
+                          onPressed: _confirmSignOut,
+                          child: const Text('Sign Out'),
+                        )
+                      : TextButton(
+                          onPressed: signIn,
+                          child: const Text('Sign In'),
+                        ),
+                ],
+              ),
+            ),
+
+            // ✅ ICON EDIT (POJOK KANAN ATAS LAYAR)
+            if (isSignedIn)
+              Positioned(
+                top: 16,
+                right: 16,
+                child: SafeArea(
+                  child: CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.white,
+                    child: IconButton(
+                      padding: EdgeInsets.zero,
+                      icon: const Icon(
+                        Icons.edit,
+                        color: Colors.deepPurple,
+                        size: 20,
+                      ),
+                      onPressed: () async {
+                        final result = await Navigator.pushNamed(
+                          context,
+                          '/edit-profile',
+                        );
+                        if (result == true) {
+                          _loadUserData();
+                        }
+                      },
                     ),
                   ),
                 ),
-
-                const SizedBox(height: 20),
-                Divider(color: Colors.deepPurple[100]),
-                const SizedBox(height: 4),
-
-                // USERNAME
-                ProfileInfoItem(
-                  icon: Icons.lock,
-                  label: 'Pengguna',
-                  value: userName,
-                  iconColor: Colors.amber,
-                ),
-
-                const SizedBox(height: 4),
-                Divider(color: Colors.deepPurple[100]),
-                const SizedBox(height: 4),
-
-                // NAMA LENGKAP
-                ProfileInfoItem(
-                  icon: Icons.person,
-                  label: 'Nama',
-                  value: fullName,
-                  showEditIcon: isSignedIn,
-                  onEditPressed: () {
-                    _editName();
-                  },
-                  iconColor: Colors.blue,
-                ),
-
-                const SizedBox(height: 4),
-                Divider(color: Colors.deepPurple[100]),
-                const SizedBox(height: 4),
-
-                // FAVORIT PER USER
-                ProfileInfoItem(
-                  icon: Icons.favorite,
-                  label: 'Favorit',
-                  value: favoritemovieCount > 0
-                      ? '$favoritemovieCount Items'
-                      : 'Tidak ada',
-                  iconColor: Colors.red,
-                ),
-
-                const SizedBox(height: 4),
-                Divider(color: Colors.deepPurple[100]),
-                const SizedBox(height: 20),
-
-                // BUTTON SIGN IN / SIGN OUT
-                isSignedIn
-                    ? TextButton(
-                        onPressed: signOut,
-                        child: const Text('Sign Out'),
-                      )
-                    : TextButton(
-                        onPressed: signIn,
-                        child: const Text('Sign In'),
-                      ),
-              ],
-            ),
-          ),
-        ],
+              ),
+          ],
+        ),
       ),
     );
   }

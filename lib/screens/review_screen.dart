@@ -9,7 +9,7 @@ class ReviewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(review.reviewerName)),
+      appBar: AppBar(title: Text('FlickReview')),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
