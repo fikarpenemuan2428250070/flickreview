@@ -27,7 +27,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
     _loadCurrentUser();
   }
 
-  /// 🔐 CEK LOGIN YANG BENAR
+  // CEK LOGIN 
   Future<void> _loadCurrentUser() async {
     final prefs = await SharedPreferences.getInstance();
     final currentUserJson = prefs.getString("currentUser");

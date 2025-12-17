@@ -6,7 +6,6 @@ class ThemeController extends ChangeNotifier {
 
   ThemeMode get themeMode => _themeMode;
 
-  // ✅ DIPAKAI OLEH SWITCH
   bool get isDarkMode => _themeMode == ThemeMode.dark;
 
   ThemeController() {
@@ -23,7 +22,6 @@ class ThemeController extends ChangeNotifier {
     }
   }
 
-  // ✅ METHOD YANG DIPANGGIL DI SETTING SCREEN
   Future<void> toggleTheme(bool isDark) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('isDarkMode', isDark);

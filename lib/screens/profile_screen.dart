@@ -115,7 +115,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
     await prefs.setBool('_isSignedIn', false);
     await prefs.remove("currentUser");
-    // jangan lupa hapus username saved jika ada
     await prefs.remove("_username");
 
     setState(() {
@@ -162,7 +161,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
     }
   }
 
-  // Tampilkan opsi pilih camera/galeri
   void _showImageSourceActionSheet() {
     if (!isSignedIn) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -215,8 +213,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       if (file.existsSync()) {
         return CircleAvatar(radius: 50, backgroundImage: FileImage(file));
       }
-      // jika file path tidak ada lagi, hapus saved path
-      // (jangan await di build -> lakukan setState kecil menggunakan microtask)
+
       Future.microtask(() async {
         final prefs = await SharedPreferences.getInstance();
         await prefs.remove('profile_image_$userName');
@@ -242,8 +239,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
               height: 200,
               width: double.infinity,
               color: isDark
-                  ? const Color(0xFF1F1B2E) // dark → menyatu (ungu hilang)
-                  : const Color(0xFF8B5CF6), // light → ungu tampil
+                  ? const Color(0xFF1F1B2E) 
+                  : const Color(0xFF8B5CF6),
             ),
 
             // BODY UTAMA
@@ -356,7 +353,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ),
 
-            // ✅ ICON EDIT (POJOK KANAN ATAS LAYAR)
+            // ICON EDIT 
             if (isSignedIn)
               Positioned(
                 top: 16,

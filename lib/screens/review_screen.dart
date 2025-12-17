@@ -11,7 +11,6 @@ class ReviewScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('FlickReview')),
       body: SingleChildScrollView(
-        // ✅ bikin bisa scroll
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

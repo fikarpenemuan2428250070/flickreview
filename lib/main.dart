@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
 
-      // 🌙 DARK MODE (yang sudah kamu buat)
+      // DARK MODE 
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         useMaterial3: true,
@@ -83,11 +83,10 @@ class MyApp extends StatelessWidget {
           iconTheme: IconThemeData(color: Colors.white),
         ),
 
-        // 🔥 INI YANG WAJIB ADA
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: Color(0xFF8B5CF6),
-            foregroundColor: Colors.white, // ⬅️ TEXT SIGN IN PUTIH
+            foregroundColor: Colors.white, 
             textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
         ),
@@ -106,13 +105,11 @@ class MyApp extends StatelessWidget {
         dialogTheme: const DialogThemeData(backgroundColor: Color(0xFF1F1B2E)),
       ),
 
-      // 🔁 CONNECT KE THEME CONTROLLER
+
       themeMode: context.watch<ThemeController>().themeMode,
 
-      // 🏠 HALAMAN UTAMA
       home: const MainScreen(),
 
-      // 🚦 SEMUA ROUTE WAJIB TERDAFTAR DI SINI
       routes: {
         '/signin': (context) => const SignInScreen(),
         '/signup': (context) => const SignUpScreen(),

@@ -10,8 +10,6 @@ class SlidePageRoute extends PageRouteBuilder {
           pageBuilder: (context, animation, secondaryAnimation) => page,
           transitionsBuilder:
               (context, animation, secondaryAnimation, child) {
-            // 👉 MASUK: kanan -> kiri
-            // 👈 KELUAR: otomatis kiri -> kanan
             final tween = Tween<Offset>(
               begin: const Offset(1.0, 0.0),
               end: Offset.zero,

@@ -21,9 +21,9 @@ class SettingScreen extends StatelessWidget {
           SwitchListTile(
             secondary: const Icon(Icons.dark_mode),
             title: const Text('Dark Mode'),
-            value: themeController.isDarkMode, //ini isDarkMode eror
+            value: themeController.isDarkMode, 
             onChanged: (value) {
-              themeController.toggleTheme(value); // toggleTheme eror
+              themeController.toggleTheme(value); 
             },
           ),
 

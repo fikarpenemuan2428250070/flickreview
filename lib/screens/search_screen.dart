@@ -44,7 +44,7 @@ class _SearchScreenState extends State<SearchScreen> {
             padding: const EdgeInsets.all(16.0),
             child: TextField(
               controller: _searchController,
-              onChanged: _searchmovie, // <-- Pencarian otomatis
+              onChanged: _searchmovie, 
               decoration: InputDecoration(
                 hintText: 'Search Movies ...',
                 prefixIcon: const Icon(Icons.search),
@@ -56,7 +56,7 @@ class _SearchScreenState extends State<SearchScreen> {
                           _searchmovie('');
                           setState(
                             () {},
-                          ); // agar suffixIcon hilang setelah clear
+                          ); 
                         },
                       )
                     : null,
@@ -101,11 +101,11 @@ class _SearchScreenState extends State<SearchScreen> {
                               // POSTER (portrait)
                               Hero(
                                 tag: movie
-                                    .posterUrl, // jika ItemCard juga pakai Hero, akan animasi
+                                    .posterUrl, 
                                 child: Container(
                                   padding: const EdgeInsets.all(8),
                                   width: 90,
-                                  height: 130, // portrait
+                                  height: 130, 
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.circular(8),
                                     child: Image.network(
@@ -128,7 +128,7 @@ class _SearchScreenState extends State<SearchScreen> {
                                               ),
                                             );
                                           },
-                                      // fallback kalau gagal load
+
                                       errorBuilder:
                                           (context, error, stackTrace) {
                                             return Container(
@@ -172,7 +172,6 @@ class _SearchScreenState extends State<SearchScreen> {
                                         ).textTheme.bodyMedium,
                                       ),
 
-                                      // NEW: type dan genre di bawah year
                                       const SizedBox(height: 6),
                                       Text(
                                         movie.type,

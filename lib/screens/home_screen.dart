@@ -17,9 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // -----------------------------------------
-      // 🔥 SIDEBAR (DRAWER)
-      // -----------------------------------------
+      // ------------- SIDEBAR (DRAWER) ------------
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
@@ -36,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
               leading: const Icon(Icons.settings),
               title: const Text('Setting'),
               onTap: () {
-                Navigator.pop(context); // tutup drawer dulu
+                Navigator.pop(context); 
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (_) => const SettingScreen()),
@@ -48,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
               leading: const Icon(Icons.info_outline),
               title: const Text('About'),
               onTap: () {
-                Navigator.pop(context); // Tutup drawer
+                Navigator.pop(context); 
                 showAboutDialog(
                   context: context,
                   applicationName: "FlickReview",
@@ -61,9 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
 
-      // -----------------------------------------
-      // 🔥 APP BAR
-      // -----------------------------------------
+      // --------------- APP BAR ---------------
       appBar: AppBar(
         leading: Builder(
           builder: (context) {
@@ -87,9 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
 
-      // -----------------------------------------
-      // 🔥 GRID MOVIE
-      // -----------------------------------------
+      // ---------------- GRID MOVIE ------------------
       body: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,

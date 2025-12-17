@@ -53,7 +53,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
 
   final users = prefs.getStringList('users') ?? [];
 
-  // 🔒 VALIDASI USERNAME (TIDAK BOLEH DUPLIKAT)
+  // VALIDASI USERNAME 
   for (final u in users) {
     final user = jsonDecode(u);
 
@@ -68,7 +68,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     }
   }
 
-  // ✅ UPDATE currentUser
+  // UPDATE currentUser
   final currentUserStr = prefs.getString('currentUser');
   if (currentUserStr != null) {
     final user = jsonDecode(currentUserStr);
@@ -79,7 +79,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     await prefs.setString('currentUser', jsonEncode(user));
   }
 
-  // ✅ UPDATE users list
+  // UPDATE users list
   for (int i = 0; i < users.length; i++) {
     final u = jsonDecode(users[i]);
     if (u['username'] == oldUsername) {
@@ -92,7 +92,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   }
   await prefs.setStringList('users', users);
 
-  // ✅ UPDATE username global
+  // UPDATE username global
   await prefs.setString('_username', newUsername);
 
   Navigator.pop(context, true);
