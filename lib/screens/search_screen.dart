@@ -1,6 +1,7 @@
 import 'package:flickreview/data/movies_data.dart';
 import 'package:flickreview/models/movies.dart';
 import 'package:flickreview/screens/detail_screnn.dart';
+import 'package:flickreview/utils/slide_route.dart';
 import 'package:flutter/material.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -35,10 +36,7 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Pencarian Film'),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text('Movie Search'), centerTitle: true),
       body: Column(
         children: [
           // TEXTFIELD SEARCH
@@ -48,7 +46,7 @@ class _SearchScreenState extends State<SearchScreen> {
               controller: _searchController,
               onChanged: _searchmovie, // <-- Pencarian otomatis
               decoration: InputDecoration(
-                hintText: 'Cari Film ...',
+                hintText: 'Search Movies ...',
                 prefixIcon: const Icon(Icons.search),
                 suffixIcon: _searchController.text.isNotEmpty
                     ? IconButton(
@@ -56,7 +54,9 @@ class _SearchScreenState extends State<SearchScreen> {
                         onPressed: () {
                           _searchController.clear();
                           _searchmovie('');
-                          setState(() {}); // agar suffixIcon hilang setelah clear
+                          setState(
+                            () {},
+                          ); // agar suffixIcon hilang setelah clear
                         },
                       )
                     : null,
@@ -73,7 +73,7 @@ class _SearchScreenState extends State<SearchScreen> {
             child: _filteredmovies.isEmpty
                 ? const Center(
                     child: Text(
-                      'Tidak ada data film yang cocok dengan kata kunci.',
+                      'No movie data matches the keyword.',
                       style: TextStyle(fontSize: 16),
                     ),
                   )
@@ -86,11 +86,10 @@ class _SearchScreenState extends State<SearchScreen> {
                         onTap: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                              builder: (_) => DetailScreen(movie: movie),
-                            ),
+                            SlidePageRoute(page: DetailScreen(movie: movie)),
                           );
                         },
+
                         child: Card(
                           margin: const EdgeInsets.symmetric(
                             horizontal: 16,
@@ -101,7 +100,8 @@ class _SearchScreenState extends State<SearchScreen> {
                             children: [
                               // POSTER (portrait)
                               Hero(
-                                tag: movie.posterUrl, // jika ItemCard juga pakai Hero, akan animasi
+                                tag: movie
+                                    .posterUrl, // jika ItemCard juga pakai Hero, akan animasi
                                 child: Container(
                                   padding: const EdgeInsets.all(8),
                                   width: 90,
@@ -114,24 +114,31 @@ class _SearchScreenState extends State<SearchScreen> {
                                       width: double.infinity,
                                       height: double.infinity,
                                       // loading indicator
-                                      loadingBuilder: (context, child, progress) {
-                                        if (progress == null) return child;
-                                        return const Center(
-                                            child: SizedBox(
+                                      loadingBuilder:
+                                          (context, child, progress) {
+                                            if (progress == null) return child;
+                                            return const Center(
+                                              child: SizedBox(
                                                 width: 24,
                                                 height: 24,
-                                                child: CircularProgressIndicator(strokeWidth: 2)));
-                                      },
+                                                child:
+                                                    CircularProgressIndicator(
+                                                      strokeWidth: 2,
+                                                    ),
+                                              ),
+                                            );
+                                          },
                                       // fallback kalau gagal load
-                                      errorBuilder: (context, error, stackTrace) {
-                                        return Container(
-                                          color: Colors.grey[200],
-                                          child: const Icon(
-                                            Icons.broken_image,
-                                            size: 36,
-                                          ),
-                                        );
-                                      },
+                                      errorBuilder:
+                                          (context, error, stackTrace) {
+                                            return Container(
+                                              color: Colors.grey[200],
+                                              child: const Icon(
+                                                Icons.broken_image,
+                                                size: 36,
+                                              ),
+                                            );
+                                          },
                                     ),
                                   ),
                                 ),
@@ -140,9 +147,15 @@ class _SearchScreenState extends State<SearchScreen> {
                               // TEXT INFO
                               Expanded(
                                 child: Padding(
-                                  padding: const EdgeInsets.fromLTRB(12, 12, 12, 12),
+                                  padding: const EdgeInsets.fromLTRB(
+                                    12,
+                                    12,
+                                    12,
+                                    12,
+                                  ),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         movie.title,
@@ -154,21 +167,27 @@ class _SearchScreenState extends State<SearchScreen> {
                                       const SizedBox(height: 6),
                                       Text(
                                         movie.year,
-                                        style: Theme.of(context).textTheme.bodyMedium,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.bodyMedium,
                                       ),
 
                                       // NEW: type dan genre di bawah year
                                       const SizedBox(height: 6),
                                       Text(
                                         movie.type,
-                                        style: Theme.of(context).textTheme.bodyMedium,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.bodyMedium,
                                       ),
                                       const SizedBox(height: 4),
                                       Text(
                                         movie.genre,
                                         maxLines: 2,
                                         overflow: TextOverflow.ellipsis,
-                                        style: Theme.of(context).textTheme.bodyMedium,
+                                        style: Theme.of(
+                                          context,
+                                        ).textTheme.bodyMedium,
                                       ),
                                     ],
                                   ),

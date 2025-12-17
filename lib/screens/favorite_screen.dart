@@ -3,6 +3,7 @@ import 'package:flickreview/models/movies.dart';
 import 'package:flickreview/screens/detail_screnn.dart';
 import 'package:flickreview/screens/search_screen.dart';
 import 'package:flickreview/screens/setting_screen.dart';
+import 'package:flickreview/utils/slide_route.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'sign_in_screen.dart';
@@ -58,9 +59,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
   @override
   Widget build(BuildContext context) {
     if (loading) {
-      return const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
-      );
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
 
     final List<Movie> favoriteMovies = movieList
@@ -120,7 +119,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
             );
           },
         ),
-        title: const Text('Film Favorite'),
+        title: const Text('Favorite Movies'),
         centerTitle: true,
         actions: [
           IconButton(
@@ -139,7 +138,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
       body: favoriteMovies.isEmpty
           ? const Center(
               child: Text(
-                'Belum ada film favorit.',
+                'There is no favorite movie yet.',
                 style: TextStyle(fontSize: 16),
               ),
             )
@@ -152,14 +151,15 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                        builder: (_) => DetailScreen(movie: movie),
-                      ),
+                      SlidePageRoute(page: DetailScreen(movie: movie)),
                     );
                   },
+
                   child: Container(
                     margin: const EdgeInsets.symmetric(
-                        horizontal: 15, vertical: 10),
+                      horizontal: 15,
+                      vertical: 10,
+                    ),
                     child: Row(
                       children: [
                         // Poster

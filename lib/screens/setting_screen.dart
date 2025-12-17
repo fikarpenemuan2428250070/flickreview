@@ -17,7 +17,7 @@ class SettingScreen extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          // 🌙 DARK MODE TOGGLE
+          // DARK MODE TOGGLE
           SwitchListTile(
             secondary: const Icon(Icons.dark_mode),
             title: const Text('Dark Mode'),
@@ -29,7 +29,7 @@ class SettingScreen extends StatelessWidget {
 
           const Divider(),
 
-          // 🔐 CHANGE PASSWORD
+          // CHANGE PASSWORD
           ListTile(
             leading: const Icon(Icons.lock_outline),
             title: const Text('Change Password'),

@@ -1,5 +1,6 @@
 import 'package:flickreview/models/movies.dart';
 import 'package:flickreview/screens/detail_screnn.dart';
+import 'package:flickreview/utils/slide_route.dart';
 import 'package:flutter/material.dart';
 
 class ItemCard extends StatelessWidget {
@@ -12,7 +13,9 @@ class ItemCard extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (_) => DetailScreen(movie: movie)),
+          SlidePageRoute(
+            page: DetailScreen(movie: movie),
+          ),
         );
       },
       child: Card(
@@ -29,22 +32,17 @@ class ItemCard extends StatelessWidget {
                   movie.posterUrl,
                   fit: BoxFit.cover,
                   width: double.infinity,
-
-                  // muncul placeholder kalau gagal load
                   loadingBuilder: (context, child, progress) {
                     if (progress == null) return child;
                     return const Center(child: CircularProgressIndicator());
                   },
-
                   errorBuilder: (context, error, stackTrace) {
                     return const Icon(Icons.broken_image, size: 50);
                   },
                 ),
               ),
             ),
-
             const SizedBox(height: 6),
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 6),
               child: Text(
@@ -57,7 +55,6 @@ class ItemCard extends StatelessWidget {
                 maxLines: 2,
               ),
             ),
-
             Padding(
               padding: const EdgeInsets.only(bottom: 8),
               child: Text(

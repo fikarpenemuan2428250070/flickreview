@@ -233,15 +233,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       body: SizedBox.expand(
         child: Stack(
           children: [
-            // HEADER UNGU
             Container(
               height: 200,
               width: double.infinity,
-              color: Colors.deepPurple,
+              color: isDark
+                  ? const Color(0xFF1F1B2E) // dark → menyatu (ungu hilang)
+                  : const Color(0xFF8B5CF6), // light → ungu tampil
             ),
 
             // BODY UTAMA
@@ -292,7 +294,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   // USERNAME
                   ProfileInfoItem(
                     icon: Icons.lock,
-                    label: 'Pengguna',
+                    label: 'Username',
                     value: userName,
                     iconColor: Colors.amber,
                   ),
@@ -304,7 +306,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   // NAMA
                   ProfileInfoItem(
                     icon: Icons.person,
-                    label: 'Nama',
+                    label: 'Fullname',
                     value: fullName,
                     iconColor: Colors.blue,
                   ),
@@ -317,7 +319,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ProfileInfoItem(
                     icon: Icons.info_outline,
                     label: 'Bio',
-                    value: bio.isNotEmpty ? bio : 'Belum ada bio',
+                    value: bio.isNotEmpty ? bio : '-',
                     iconColor: Colors.green,
                   ),
 
@@ -328,13 +330,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   // FAVORIT
                   ProfileInfoItem(
                     icon: Icons.favorite,
-                    label: 'Favorit',
+                    label: 'Favorite',
                     value: favoritemovieCount > 0
-                        ? '$favoritemovieCount Items'
-                        : 'Tidak ada',
+                        ? '$favoritemovieCount Item(s)'
+                        : '-',
                     iconColor: Colors.red,
                   ),
 
+                  const SizedBox(height: 4),
+                  Divider(color: Colors.deepPurple[100]),
+                  const SizedBox(height: 4),
                   const SizedBox(height: 20),
 
                   // SIGN IN / OUT

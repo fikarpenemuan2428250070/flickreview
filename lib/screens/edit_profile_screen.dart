@@ -103,7 +103,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Edit Profil'),
+        title: const Text('Edit Profile'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -112,7 +112,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             TextField(
               controller: _nameController,
               decoration: const InputDecoration(
-                labelText: 'Nama Lengkap',
+                labelText: 'Fullname',
               ),
             ),
             const SizedBox(height: 12),
@@ -133,7 +133,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
             const SizedBox(height: 24),
             ElevatedButton(
               onPressed: _saveProfile,
-              child: const Text('Simpan Perubahan'),
+              child: const Text('Save Changes'),
             ),
           ],
         ),

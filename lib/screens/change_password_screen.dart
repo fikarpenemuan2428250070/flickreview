@@ -54,17 +54,17 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
     final confirmPass = _confirmController.text.trim();
 
     if (oldPass.isEmpty || newPass.isEmpty || confirmPass.isEmpty) {
-      _showMessage('Semua field wajib diisi');
+      _showMessage('All fields are required to be filled in');
       return;
     }
 
     if (oldPass != currentUser!['password']) {
-      _showMessage('Password lama salah');
+      _showMessage('The old password is wrong');
       return;
     }
 
     if (newPass != confirmPass) {
-      _showMessage('Konfirmasi password tidak sama');
+      _showMessage('Password confirmation is not the same');
       return;
     }
 
@@ -84,7 +84,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
     await prefs.setStringList("users", users);
     await prefs.setString("currentUser", jsonEncode(currentUser));
 
-    _showMessage('Password berhasil diubah');
+    _showMessage('Password changed successfully');
 
     Future.delayed(const Duration(seconds: 1), () {
       Navigator.pop(context);
@@ -92,24 +92,17 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
   }
 
   void _showMessage(String msg) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(msg)),
-    );
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
   }
 
   @override
   Widget build(BuildContext context) {
     if (currentUser == null) {
-      return const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
-      );
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Change Password'),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text('Change Password'), centerTitle: true),
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -142,7 +135,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: _changePassword,
-                child: const Text('Simpan Perubahan'),
+                child: const Text('Save Changes'),
               ),
             ),
           ],

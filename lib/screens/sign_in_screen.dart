@@ -17,7 +17,7 @@ class _SignInScreenState extends State<SignInScreen> {
   final TextEditingController _passwordController = TextEditingController();
 
   String _errorText = '';
-  bool _isSignedIn = false;
+  bool _isSignedIn = false; 
   bool _obscurePassword = true;
 
   @override
@@ -28,7 +28,7 @@ class _SignInScreenState extends State<SignInScreen> {
       if (widget.fromRegister) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text("Registrasi berhasil! Silakan log in."),
+            content: Text("Registration successful! Please log in."),
             duration: Duration(seconds: 2),
           ),
         );
@@ -42,14 +42,14 @@ class _SignInScreenState extends State<SignInScreen> {
     final enteredPassword = _passwordController.text.trim();
 
     if (enteredUsername.isEmpty || enteredPassword.isEmpty) {
-      setState(() => _errorText = 'Nama Pengguna dan Kata Sandi harus diisi');
+      setState(() => _errorText = 'Username and Password are required fields');
       return;
     }
 
     List<String> userList = prefs.getStringList("users") ?? [];
 
     if (userList.isEmpty) {
-      setState(() => _errorText = 'Pengguna belum terdaftar.');
+      setState(() => _errorText = 'User is not registered yet.');
       return;
     }
 
@@ -72,7 +72,7 @@ class _SignInScreenState extends State<SignInScreen> {
       }
     }
 
-    setState(() => _errorText = 'Nama pengguna atau kata sandi salah.');
+    setState(() => _errorText = 'Incorrect username or password.');
   }
 
   @override
@@ -89,21 +89,21 @@ class _SignInScreenState extends State<SignInScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  /// USERNAME
+                  // USERNAME
                   TextFormField(
                     controller: _usernameController,
                     style: TextStyle(
                       color: Theme.of(context).colorScheme.onSurface,
                     ),
                     decoration: const InputDecoration(
-                      labelText: "Nama Pengguna",
+                      labelText: "Username",
                       border: OutlineInputBorder(),
                     ),
                   ),
 
                   const SizedBox(height: 20),
 
-                  /// PASSWORD
+                  // PASSWORD
                   TextFormField(
                     controller: _passwordController,
                     obscureText: _obscurePassword,
@@ -111,7 +111,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       color: Theme.of(context).colorScheme.onSurface,
                     ),
                     decoration: InputDecoration(
-                      labelText: "Kata Sandi",
+                      labelText: "Password",
                       border: const OutlineInputBorder(),
                       errorText: _errorText.isNotEmpty ? _errorText : null,
                       suffixIcon: IconButton(
@@ -131,7 +131,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
                   const SizedBox(height: 24),
 
-                  /// BUTTON SIGN IN
+                  // BUTTON SIGN IN
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
@@ -142,7 +142,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
                   const SizedBox(height: 16),
 
-                  /// LINK DAFTAR
+                  // LINK DAFTAR
                   RichText(
                     text: TextSpan(
                       style: TextStyle(
@@ -152,13 +152,11 @@ class _SignInScreenState extends State<SignInScreen> {
                             : Colors.deepPurple,
                       ),
                       children: [
-                        const TextSpan(text: 'Belum punya akun? '),
+                        const TextSpan(text: 'Don\'t have an account yet? '),
                         TextSpan(
-                          text: 'Daftar di sini',
+                          text: 'Register here',
                           style: TextStyle(
-                            color: isDark
-                                ? Colors.white
-                                : Colors.deepPurple,
+                            color: Colors.blue,
                             fontWeight: FontWeight.bold,
                             decoration: TextDecoration.underline,
                           ),

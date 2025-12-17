@@ -1,5 +1,6 @@
 import 'package:flickreview/data/movies_data.dart';
 import 'package:flickreview/models/movies.dart';
+import 'package:flickreview/utils/scale_fade_route.dart';
 import 'package:flickreview/widgets/item_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flickreview/screens/search_screen.dart';
@@ -80,10 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
           IconButton(
             icon: const Icon(Icons.search),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => SearchScreen()),
-              );
+              Navigator.push(context, ScaleFadeRoute(page: SearchScreen()));
             },
           ),
         ],

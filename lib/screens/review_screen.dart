@@ -9,13 +9,15 @@ class ReviewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('FlickReview')),
-      body: Padding(
+      appBar: AppBar(title: const Text('FlickReview')),
+      body: SingleChildScrollView(
+        // ✅ bikin bisa scroll
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 CircleAvatar(
                   backgroundImage: NetworkImage(review.profileImage),
@@ -32,10 +34,12 @@ class ReviewScreen extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+                    const SizedBox(height: 4),
                     Row(
                       children: [
-                        const Icon(Icons.star, color: Colors.amber),
-                        Text("${review.rating}/10"),
+                        const Icon(Icons.star, color: Colors.amber, size: 18),
+                        const SizedBox(width: 4),
+                        Text("${review.rating}/5"),
                       ],
                     ),
                   ],
@@ -43,7 +47,16 @@ class ReviewScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20),
-            Text(review.fullReview, style: const TextStyle(fontSize: 16)),
+
+            // Review text
+            Text(
+              review.fullReview,
+              textAlign: TextAlign.justify,
+              style: const TextStyle(fontSize: 16, height: 1.5),
+            ),
+
+            const SizedBox(height: 40),
+            const SizedBox(height: 20),
           ],
         ),
       ),

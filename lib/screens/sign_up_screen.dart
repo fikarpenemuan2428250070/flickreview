@@ -30,7 +30,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     // Validasi konfirmasi password
     if (password != confirmPassword) {
       setState(() {
-        _errorText = 'Konfirmasi password tidak sama.';
+        _errorText = 'Password confirmation is not the same.';
       });
       return;
     }
@@ -43,7 +43,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         !password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'))) {
       setState(() {
         _errorText =
-            'Minimal 8 karakter, kombinasi A-Z, a-z, angka, dan simbol.';
+            'Minimum 8 characters, combination of A-Z, a-z, numbers, and symbols.';
       });
       return;
     }
@@ -56,7 +56,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     for (var u in userList) {
       final data = jsonDecode(u);
       if (data['username'] == username) {
-        setState(() => _errorText = "Username sudah digunakan.");
+        setState(() => _errorText = "Username already in use.");
         return;
       }
     }
@@ -127,7 +127,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   TextFormField(
                     controller: _nameController,
                     decoration: const InputDecoration(
-                      labelText: 'Nama',
+                      labelText: 'Fullname',
                       border: OutlineInputBorder(),
                     ),
                   ),
@@ -136,7 +136,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   TextFormField(
                     controller: _usernameController,
                     decoration: const InputDecoration(
-                      labelText: 'Nama Pengguna',
+                      labelText: 'Username',
                       border: OutlineInputBorder(),
                     ),
                   ),
@@ -145,14 +145,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   // Password
                   _passwordField(
                     controller: _passwordController,
-                    label: 'Kata Sandi',
+                    label: 'Password',
                   ),
                   const SizedBox(height: 20),
 
                   // Konfirmasi Password
                   _passwordField(
                     controller: _confirmPasswordController,
-                    label: 'Konfirmasi Kata Sandi',
+                    label: 'Confirm Password',
                   ),
                   const SizedBox(height: 20),
 
